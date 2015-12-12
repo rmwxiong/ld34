@@ -1,8 +1,82 @@
 body {
-  color: #eee;
+  color: #555;
+  font-family: 'Average Sans', sans-serif;
   background-color: #1e1d1f;
 }
 
 canvas {
+  background-color: #933;
   border: 1px solid #eee;
 }
+
+.key {
+  background: #d3cfcc;
+  border-color: #ece8e4 #dedad6 #c9c4c4;
+  width: 40px;
+  height: 45px;
+  margin: 2px;
+  border-width: 3px 7px 10px;
+  border-style: solid;
+  border-radius: 4px;
+  float: left;
+  &.pressed {
+    -webkit-transform: scale(0.95, 0.95);
+    -moz-transform: scale(0.95, 0.95);
+    -ms-transform: scale(0.95, 0.95);
+    -o-transform: scale(0.95, 0.95);
+    transform: scale(0.95, 0.95);
+  }
+}
+
+.keycap {
+  width: 33px;
+  height: 40px;
+  padding: 5px 0 0 7px;
+  font-size: 18px;
+  line-height: 1;
+  background: #f5f3f1;
+  background: -webkit-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);
+  background: -moz-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);
+  background: -ms-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);
+  background: -o-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);
+  background: linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  position: relative;
+}
+
+$arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: auto;
+  height: 45px;
+}
+
+
+.arrow-right {
+  @extends $arrow;
+}
+
+.arrow-down {
+  @extends $arrow;
+  span {
+    transform: rotate(90deg);
+  }
+}
+
+.arrow-left {
+  @extends $arrow;
+  span {
+    transform: rotate(180deg);
+  }
+}
+
+.arrow-up {
+  @extends $arrow;
+  span {
+    transform: rotate(270deg);
+  }
+}
+

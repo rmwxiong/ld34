@@ -4,17 +4,17 @@ export default class Minigame {
   constructor(keys, name) {
     this.id = name || Math.random().toString(36).substring(7);
     this.tick = this.tick.bind(this);
-    keys.forEach(key => controls.setupKey(key));
-
     this.initStage();
+    keys.forEach(key => controls.setupKey(key, this.$container));
   }
 
   initStage() {
-    let canvas = document.createElement('canvas');
-    canvas.width = canvas.height = 500;
-    canvas.id = this.id;
-    document.querySelector('body').appendChild(canvas);
-    this.stage = new createjs.Stage(canvas);
+    let $canvas = $(`<canvas id=${this.id} width=500 height=500></canvas>`);
+    let $container = $('<div class="game-container"></div>').append($canvas);
+    $('body').append($container);
+    this.$canvas = $canvas;
+    this.$container = $container;
+    this.stage = new createjs.Stage($canvas[0]);
   }
 
   tick() {}
