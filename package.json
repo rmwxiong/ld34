@@ -29,5 +29,8 @@
     "webpack": "^1.8.11",
     "webpack-dev-server": "^1.14.0",
     "wordwrap": "1.0.0"
+  },
+  "dependencies": {
+    "keyboardjs": "^2.2.0"
   }
 }

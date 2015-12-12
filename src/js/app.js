@@ -2,45 +2,58 @@
 
 require('../css/style.styl');
 require('./blah.js');
+import keyboard from 'keyboardjs';
 
-let listener = new window.keypress.Listener();
-listener.on = listener.simple_combo;
+const PLAYER_SPEED = 2;
 
-let stage = new createjs.Stage('demoCanvas');
-let circle = new createjs.Shape();
-circle.graphics.beginFill('red').drawCircle(0, 0, 40);
-circle.x = circle.y = 50;
-stage.addChild(circle);
+class Controls {
+  constructor(keyboard) {
+    this.keyboard = keyboard;
+  }
 
-let player = new createjs.Shape();
-
-stage.addChild(player);
-player.graphics.beginFill('#393').drawRect(0, 0, 50, 50);
-player.x = player.y = 100;
-
-createjs.Tween.get(player).to({x: 300}, 1000);
-
-createjs.Tween.get(circle, {loop: true})
-  .to({
-    x: 400
-  }, 1000, createjs.Ease.getPowInOut(4))
-  .to({
-    alpha: 0,
-    y: 175
-  }, 500, createjs.Ease.getPowInOut(2))
-  .to({
-    alpha: 0,
-    y: 225
-  }, 100)
-  .to({
-    alpha: 1,
-    y: 200
-  }, 500, createjs.Ease.getPowInOut(2))
-  .to({
-    x: 100
-  }, 800, createjs.Ease.getPowInOut(2));
+  setupKey(key) {
+    this.keyboard.bind(key, () => this[key] = true, () => this[key] = false);
+  }
+}
 
 createjs.Ticker.setFPS(60);
-createjs.Ticker.addEventListener('tick', stage);
+createjs.Ticker.addEventListener('tick', tick);
+let stage = new createjs.Stage('demoCanvas');
 
-listener.on('left', () => player.x--);
+let controls = new Controls(keyboard);
+controls.setupKey('left');
+controls.setupKey('right');
+
+let box = new createjs.Shape();
+stage.addChild(box);
+box.graphics.beginFill('#369').drawRect(0, 0, 50, 50);
+box.width = box.height = 50;
+box.x = 300;
+box.y = 100;
+
+let player = new createjs.Shape();
+stage.addChild(player);
+player.graphics.beginFill('#393').drawRect(0, 0, 50, 50);
+player.width = player.height = 50;
+player.x = 225;
+player.y = 450;
+
+function isTouching(rect1, rect2) {
+  return !(rect1.x >= rect2.x + rect2.width ||
+    rect1.x + rect1.width <= rect2.x ||
+    rect1.y >= rect2.y + rect2.height ||
+    rect1.y + rect1.height <= rect2.y);
+}
+
+function tick(event) {
+  if (isTouching(box, player)) {
+    player.x = 0;
+  }
+  if (controls.left) {
+    player.x -= event.delta / 10 * PLAYER_SPEED;
+  } else if (controls.right) {
+    player.x += event.delta / 10 * PLAYER_SPEED;
+  }
+
+  stage.update();
+}
