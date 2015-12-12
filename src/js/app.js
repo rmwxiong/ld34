@@ -3,16 +3,15 @@
 import '../css/style.styl';
 import keyboard from 'keyboardjs';
 import {controls} from './controls';
-import Minigame from './minigame';
+import DodgeFalling from './games/two/dodge-falling';
 
 createjs.Ticker.setFPS(60);
-
 controls.init(keyboard);
-controls.setupKey('left');
-controls.setupKey('right');
 
-keyboard.bind('left', () => console.log('left press', controls.id));
+let game = new DodgeFalling(['left', 'right'], 'firstGame');
 
-let game = new Minigame(['left', 'right'], 'firstGame');
+createjs.Ticker.addEventListener('tick', tick);
 
-createjs.Ticker.addEventListener('tick', game.tick);
+function tick(event) {
+  game.tick(event);
+}

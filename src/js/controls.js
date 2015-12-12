@@ -1,10 +1,14 @@
 class Controls {
   constructor() {
+    this.boundKeys = {};
     this.id = Math.random().toString(36).substring(7);
   }
 
   setupKey(key) {
-    this.keyboard.bind(key, () => this[key] = true, () => this[key] = false);
+    if (!this.boundKeys[key]) {
+      this.keyboard.bind(key, () => this[key] = true, () => this[key] = false);
+      this.boundKeys[key] = true;
+    }
   }
 
   init(keyboard) {
@@ -13,6 +17,7 @@ class Controls {
 }
 
 let instance;
+
 function createControls() {
   if (!instance) {
     instance = new Controls();
