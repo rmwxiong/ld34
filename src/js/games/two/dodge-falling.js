@@ -37,17 +37,17 @@ export default class DodgeFalling extends Minigame {
 
   tick(event) {
     let box = this.box;
-    let player = this.player.shape;
-    if (isTouching(box, player)) {
+    let player = this.player;
+    if (isTouching(box, player.shape)) {
       player.x = 0;
       box.y = 0;
       box.dy = 0;
     }
 
     if (controls.left) {
-      player.x -= event.delta / 10 * PLAYER_SPEED;
+      player.move(-event.delta / 10 * PLAYER_SPEED);
     } else if (controls.right) {
-      player.x += event.delta / 10 * PLAYER_SPEED;
+      player.move(event.delta / 10 * PLAYER_SPEED);
     }
 
     box.dy += 0.2;
