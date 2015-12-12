@@ -19,12 +19,14 @@
     "cssnext-loader": "^1.0.1",
     "csswring": "^3.0.4",
     "doiuse": "^0.3.2",
+    "eslint": "^1.10.3",
+    "eslint-config-google": "^0.3.0",
     "postcss": "^4.1.8",
     "postcss-loader": "^0.4.1",
     "postcss-nested": "^0.3.1",
     "style-loader": "^0.12.1",
     "webpack": "^1.8.11",
-    "webpack-dev-server": "^1.8.2",
+    "webpack-dev-server": "^1.14.0",
     "wordwrap": "1.0.0"
   }
 }
