@@ -9,7 +9,9 @@ module.exports = {
     createjs: true
   },
   'rules': {
-    'max-len': [1, 120, 4]
-  },
-  'quote-props': [1, 'as-needed']
+    'max-len': [1, 120, 4],
+    'quote-props': [0, 'as-needed'],
+    'no-else-return': 0,
+    'require-jsdoc': 0
+  }
 };
