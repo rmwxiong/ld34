@@ -8,7 +8,7 @@ import DodgeFalling from './games/two/dodge-falling';
 createjs.Ticker.setFPS(60);
 controls.init(keyboard);
 
-let game = new DodgeFalling(['left', 'right'], 'firstGame');
+let game = new DodgeFalling(['left', 'right']);
 
 createjs.Ticker.addEventListener('tick', tick);
 
