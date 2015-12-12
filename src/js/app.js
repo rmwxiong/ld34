@@ -3,11 +3,22 @@
 require('../css/style.styl');
 require('./blah.js');
 
+let listener = new window.keypress.Listener();
+listener.on = listener.simple_combo;
+
 let stage = new createjs.Stage('demoCanvas');
 let circle = new createjs.Shape();
 circle.graphics.beginFill('red').drawCircle(0, 0, 40);
 circle.x = circle.y = 50;
 stage.addChild(circle);
+
+let player = new createjs.Shape();
+
+stage.addChild(player);
+player.graphics.beginFill('#393').drawRect(0, 0, 50, 50);
+player.x = player.y = 100;
+
+createjs.Tween.get(player).to({x: 300}, 1000);
 
 createjs.Tween.get(circle, {loop: true})
   .to({
@@ -32,10 +43,4 @@ createjs.Tween.get(circle, {loop: true})
 createjs.Ticker.setFPS(60);
 createjs.Ticker.addEventListener('tick', stage);
 
-let listener = new window.keypress.Listener();
-listener.on = listener.simple_combo;
-listener.on('b', () => console.log('you pressed' + JSON.stringify(arguments)));
-
-listener.counting_combo('a', function(e, count) {
-  console.log("You've pressed this " + count + ' times.');
-});
+listener.on('left', () => player.x--);
