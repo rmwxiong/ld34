@@ -23,5 +23,8 @@ export default class Minigame {
     this.$container.remove();
   }
 
-  tick() {}
+  tick() {
+    if (createjs.Ticker.getPaused()) return;
+    this.stage.update();
+  }
 }

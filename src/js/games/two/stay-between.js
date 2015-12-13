@@ -62,6 +62,7 @@ export default class StayBetween extends Minigame {
 
     this.lines.forEach(line => {
       if (isTouching(line, player)) {
+        document.dispatchEvent(new Event('lose'));
         player.dy = 0;
         player.moveTo(0, AABB[3] / 2);
       }
@@ -90,6 +91,6 @@ export default class StayBetween extends Minigame {
       object.move(event.delta);
     });
 
-    this.stage.update();
+    super.tick();
   }
 }

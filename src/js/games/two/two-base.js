@@ -38,6 +38,6 @@ export default class DodgeFalling extends Minigame {
       player.moveBy(event.delta / 10 * PLAYER_SPEED);
     }
 
-    this.stage.update();
+    super.tick();
   }
 }

@@ -55,7 +55,6 @@ export default class DodgeFalling extends Minigame {
       } else {
         ring.drawArc(1);
         target.readyToFire = true;
-        createjs.Tween.get(ring).to({})
       }
     };
 
@@ -90,6 +89,10 @@ export default class DodgeFalling extends Minigame {
     }
 
     this.ball.move();
-    this.stage.update();
+    if (ball.shape.x + ball.shape.width > AABB[3]) {
+      document.dispatchEvent(new Event('lose'));
+      ball.moveTo(Math.random() * -2 * AABB[3], (AABB[3] / 2));
+    }
+    super.tick();
   }
 }

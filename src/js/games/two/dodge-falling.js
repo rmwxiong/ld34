@@ -47,6 +47,7 @@ export default class DodgeFalling extends Minigame {
     let box = this.box;
     let player = this.player;
     if (isTouching(box, player)) {
+      document.dispatchEvent(new Event('lose'));
       player.moveTo(0);
       box.reset();
     }
@@ -64,6 +65,6 @@ export default class DodgeFalling extends Minigame {
       box.reset();
     }
 
-    this.stage.update();
+    super.tick();
   }
 }
