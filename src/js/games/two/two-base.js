@@ -5,7 +5,8 @@ import Moveable from '../../moveable';
 
 const GAME_NAME = 'dodge-falling';
 const PLAYER_SPEED = 2;
-const AABB = [0, 0, 500, 500];
+const AABB = [0, 0, 300, 300];
+const OBJECT_HEIGHT = 20;
 
 export default class DodgeFalling extends Minigame {
   constructor(keys, name) {
@@ -20,14 +21,12 @@ export default class DodgeFalling extends Minigame {
   setupStage() {
     let player = new Moveable(this.stage, {
       aabb: AABB,
-      width: 50,
-      height: 80,
-      x: 225,
-      y: AABB[3] - 80,
-      isBounded: true
+      width: AABB[2],
+      height: OBJECT_HEIGHT,
+      y: (AABB[3] - OBJECT_HEIGHT) / 2
     });
     this.player = player;
-    player.graphics.beginFill('#393').drawRect(0, 0, player.shape.width, player.shape.height);
+    player.graphics.beginFill('#369').drawRect(0, 0, player.shape.width, player.shape.height);
   }
 
   tick(event) {

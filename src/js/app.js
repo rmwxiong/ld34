@@ -5,6 +5,7 @@ import keyboard from 'keyboardjs';
 import {controls} from './controls';
 import DodgeFalling from './games/two/dodge-falling';
 import StayBetween from './games/two/stay-between';
+import Snapshot from './games/one/snapshot';
 
 (function() {
   createjs.Ticker.setFPS(60);
@@ -12,6 +13,7 @@ import StayBetween from './games/two/stay-between';
 
   let games = [];
   let game = new DodgeFalling(['left', 'right']);
+  // let game = new Snapshot(['space']);
   games.push(game);
 
   setTimeout(() => {

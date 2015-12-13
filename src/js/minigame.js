@@ -9,7 +9,7 @@ export default class Minigame {
   }
 
   initStage() {
-    let $canvas = $(`<canvas id=${this.id} width=500 height=500></canvas>`);
+    let $canvas = $(`<canvas id=${this.id} width=300 height=300></canvas>`);
     let $container = $('<div class="game-container"></div>').append($canvas);
     $('body').append($container);
     this.$canvas = $canvas;

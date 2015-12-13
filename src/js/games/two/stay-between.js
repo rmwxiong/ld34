@@ -5,8 +5,8 @@ import Moveable from '../../moveable';
 
 const GAME_NAME = 'stay-between';
 const PLAYER_SPEED = 1;
-const AABB = [0, 0, 500, 500];
-const LINE_HEIGHT = 10;
+const AABB = [0, 0, 300, 300];
+const LINE_HEIGHT = 5;
 // const LINE_COUNT = 2;
 const LINE_DISTANCE = AABB[3] / 4;
 
@@ -29,14 +29,14 @@ export default class StayBetween extends Minigame {
       y: (AABB[3] - LINE_HEIGHT) / 2
     });
     this.player = player;
-    player.graphics.beginFill('#393').drawRect(0, 0, player.shape.width, player.shape.height);
+    player.graphics.beginFill('#369').drawRect(0, 0, player.shape.width, player.shape.height);
     this.objects.push(player);
 
     this.lines = [];
 
     let line = new Moveable(this.stage, {
       aabb: AABB,
-      width: 500,
+      width: AABB[2],
       height: 10,
       y: this.player.shape.y - LINE_DISTANCE,
       dy: -2
@@ -47,7 +47,7 @@ export default class StayBetween extends Minigame {
 
     let line2 = new Moveable(this.stage, {
       aabb: AABB,
-      width: 500,
+      width: AABB[2],
       height: 10,
       y: this.player.shape.y + LINE_DISTANCE,
       dy: -2

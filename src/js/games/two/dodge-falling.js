@@ -5,7 +5,7 @@ import Moveable from '../../moveable';
 
 const GAME_NAME = 'dodge-falling';
 const PLAYER_SPEED = 4;
-const AABB = [0, 0, 500, 500];
+const AABB = [0, 0, 300, 300];
 
 export default class DodgeFalling extends Minigame {
   constructor(keys, name) {
@@ -20,12 +20,12 @@ export default class DodgeFalling extends Minigame {
   setupStage() {
     let box = new Moveable(this.stage, {
       aabb: AABB,
-      width: 100,
-      height: 100,
-      x: 300
+      width: 60,
+      height: 60,
+      x: 200
     });
     this.box = box;
-    box.graphics.beginFill('#369').drawRect(0, 0, box.shape.width, box.shape.height);
+    box.graphics.beginFill('#911').drawRect(0, 0, box.shape.width, box.shape.height);
     box.reset = function() {
       box.moveTo(Math.random() * (AABB[2] - box.shape.width), 0);
       box.dy = 0;
@@ -33,14 +33,14 @@ export default class DodgeFalling extends Minigame {
 
     let player = new Moveable(this.stage, {
       aabb: AABB,
-      width: 50,
-      height: 80,
-      x: 225,
-      y: AABB[3] - 80,
+      width: 30,
+      height: 60,
+      x: 150,
+      y: AABB[3] - 60,
       isBounded: true
     });
     this.player = player;
-    player.graphics.beginFill('#393').drawRect(0, 0, player.shape.width, player.shape.height);
+    player.graphics.beginFill('#369').drawRect(0, 0, player.shape.width, player.shape.height);
   }
 
   tick(event) {
