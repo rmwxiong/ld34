@@ -6,10 +6,12 @@ import {controls} from './controls';
 import DodgeFalling from './games/two/dodge-falling';
 import StayBetween from './games/two/stay-between';
 import Snapshot from './games/one/snapshot';
+import Collect from './games/four/collect';
 import bgm from 'file!../ld34bgm.mp3';
 
 (function() {
   createjs.Ticker.setFPS(60);
+  createjs.Ticker.setPaused(true);
   controls.init(keyboard);
   createjs.Ticker.addEventListener('tick', tick);
   let games = [];
@@ -20,10 +22,15 @@ import bgm from 'file!../ld34bgm.mp3';
   let score = 0;
   let startTime = Date.now();
 
-  setupSounds();
-  startGames();
+  $('.instructions').hide();
+  $('.instructions').html("Who added all these buttons?! <br> Oh well, I suppose you'll have to watch for the controls to survive.");
+  $('.instructions').append($('#instructions-g1').html());
 
-  keyboard.bind('g', startGames);
+  setupSounds();
+  // startGames();
+
+  keyboard.bind('right', startGames);
+  keyboard.bind('left', showMenu);
   function setupSounds() {
     let sounds = [{
       id: 'bgm',
@@ -35,12 +42,34 @@ import bgm from 'file!../ld34bgm.mp3';
     createjs.Sound.registerSounds(sounds, '/');
   }
 
+  function hideMenu() {
+    $('.main-menu').addClass('hidden');
+  }
+
+  function showMenu() {
+    $('.main-menu').removeClass('hidden');
+    $('.title-extra').removeClass('hidden');
+  }
+
+  function showInstructions() {
+    $('.instructions').show();
+    $('.instructions').removeClass('hidden');
+    $('.main-menu').addClass('hidden');
+  }
+
+  function hideInstructions() {
+    $('.instructions').addClass('hidden');
+    $('.main-menu').removeClass('hidden');
+  }
+
   function startGames() {
+    hideMenu();
     startTime = Date.now();
     score = 0;
     createjs.Ticker.setPaused(false);
     games.forEach(game => game.destroy());
     games = [];
+    // let game = new Collect(['w', 'a', 's', 'd']);
     let game = new DodgeFalling(['left', 'right']);
     games.push(game);
 
@@ -55,6 +84,12 @@ import bgm from 'file!../ld34bgm.mp3';
       games.push(game2);
     }, 27420);
     gameSpawns.push(game2spawn);
+
+    let game3spawn = setTimeout(() => {
+      let game3 = new Collect(['w', 'a', 's', 'd']);
+      games.push(game3);
+    }, 41140);
+    gameSpawns.push(game3spawn);
   }
 
   function onLoss() {

@@ -26,7 +26,7 @@ export default class DodgeFalling extends Minigame {
       y: (AABB[3] - OBJECT_HEIGHT) / 2
     });
     this.player = player;
-    player.graphics.beginFill('#369').drawRect(0, 0, player.shape.width, player.shape.height);
+    player.graphics.beginFill('#369').drawRect(0, 0, player.entity.width, player.entity.height);
   }
 
   tick(event) {

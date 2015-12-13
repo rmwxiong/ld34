@@ -29,7 +29,7 @@ export default class StayBetween extends Minigame {
       y: (AABB[3] - LINE_HEIGHT) / 2
     });
     this.player = player;
-    player.graphics.beginFill('#369').drawRect(0, 0, player.shape.width, player.shape.height);
+    player.graphics.beginFill('#369').drawRect(0, 0, player.entity.width, player.entity.height);
     this.objects.push(player);
 
     this.lines = [];
@@ -38,22 +38,22 @@ export default class StayBetween extends Minigame {
       aabb: AABB,
       width: AABB[2],
       height: 10,
-      y: this.player.shape.y - LINE_DISTANCE,
+      y: this.player.entity.y - LINE_DISTANCE,
       dy: -2
     });
     this.lines.push(line);
-    line.graphics.beginFill('#911').drawRect(0, 0, line.shape.width, line.shape.height);
+    line.graphics.beginFill('#911').drawRect(0, 0, line.entity.width, line.entity.height);
     this.objects.push(line);
 
     let line2 = new Moveable(this.stage, {
       aabb: AABB,
       width: AABB[2],
       height: 10,
-      y: this.player.shape.y + LINE_DISTANCE,
+      y: this.player.entity.y + LINE_DISTANCE,
       dy: -2
     });
     this.lines.push(line2);
-    line2.graphics.beginFill('#911').drawRect(0, 0, line.shape.width, line.shape.height);
+    line2.graphics.beginFill('#911').drawRect(0, 0, line.entity.width, line.entity.height);
     this.objects.push(line2);
   }
 
@@ -81,10 +81,10 @@ export default class StayBetween extends Minigame {
 
     this.objects.forEach(object => {
       // Check if wrapped screen
-      if (object.shape.y < 0) {
+      if (object.entity.y < 0) {
         object.moveTo(0, AABB[3]);
-      } else if (object.shape.y > AABB[3] - object.shape.height) {
-        object.shape.y = AABB[3] - object.shape.height;
+      } else if (object.entity.y > AABB[3] - object.entity.height) {
+        object.entity.y = AABB[3] - object.entity.height;
         if (object.dy > 0) object.dy = 0;
       }
 

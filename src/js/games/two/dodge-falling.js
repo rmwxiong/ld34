@@ -25,9 +25,9 @@ export default class DodgeFalling extends Minigame {
       x: 200
     });
     this.box = box;
-    box.graphics.beginFill('#911').drawRect(0, 0, box.shape.width, box.shape.height);
+    box.graphics.beginFill('#911').drawRect(0, 0, box.entity.width, box.entity.height);
     box.reset = function() {
-      box.moveTo(Math.random() * (AABB[2] - box.shape.width), 0);
+      box.moveTo(Math.random() * (AABB[2] - box.entity.width), 0);
       box.dy = 0;
     };
 
@@ -40,7 +40,7 @@ export default class DodgeFalling extends Minigame {
       isBounded: true
     });
     this.player = player;
-    player.graphics.beginFill('#369').drawRect(0, 0, player.shape.width, player.shape.height);
+    player.graphics.beginFill('#369').drawRect(0, 0, player.entity.width, player.entity.height);
   }
 
   tick(event) {
@@ -61,7 +61,7 @@ export default class DodgeFalling extends Minigame {
     box.dy += 0.2;
     box.move(event.delta);
 
-    if (box.shape.y >= box.aabb[3]) {
+    if (box.entity.y >= box.aabb[3]) {
       box.reset();
     }
 

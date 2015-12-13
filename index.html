@@ -7,9 +7,52 @@
 <body>
 
 <div class="main-container">
-  <div class="score">15</div>
+
+  <div class="main-menu">
+    <div class="title-page">
+      <h1 class="title">Two Buttons <span class="title-extra hidden">and Growing</span></h1>
+      <div class="navigation">
+        <div class="nav-key">
+          <div class="key">
+            <div class="arrow-left keycap static"><span>&#10140;</span></div>
+          </div>
+          <div class="nav-key-label" id="key-label-left">Instructions</div>
+        </div>
+
+        <div class="nav-key">
+          <div class="key">
+            <div class="arrow-right keycap static"><span>&#10140;</span></div>
+          </div>
+          <div class="nav-key-label" id="key-label-right">Play</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="instructions">
+      Just a simple game with two buttons. Use the left and right arrow keys to dodge the falling blocks!
+    </div>
+  </div>
+  <div class="score"></div>
 </div>
 
+<script id="instructions-g1" type="text/template">
+  <div class="game-instruction">Game 1: Dodge the falling blocks</div>
+</script>
+<script id="instructions-g2" type="text/template">
+  <div class="game-instruction">Game 2: Hit the target as it passes by</div>
+</script>
+<script id="instructions-g3" type="text/template">
+  <div class="game-instruction">Game 3: Stay between the lines</div>
+</script>
+<script id="instructions-g4" type="text/template">
+  <div class="game-instruction">Game 4: Collect the dots</div>
+</script>
+<script id="instructions-g2" type="text/template">
+  <div class="game-instruction">Game 5: Solve the math problems</div>
+</script>
+<script id="instructions-g2" type="text/template">
+  <div class="game-instruction">Game 6: Match the shapes with your keyboard</div>
+</script>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>

@@ -26,7 +26,7 @@ export default class DodgeFalling extends Minigame {
       dx: 10
     });
     this.ball = ball;
-    ball.graphics.beginFill('#393').drawCircle(0, 0, ball.shape.width);
+    ball.graphics.beginFill('#393').drawCircle(0, 0, ball.entity.width);
 
     let target = new createjs.Container();
     target.x = AABB[2] / 2;
@@ -72,13 +72,13 @@ export default class DodgeFalling extends Minigame {
           .drawCircle(0, 0, target.r);
         target.readyToFire = false;
         target.charge = 0;
-        if (ball.shape.x - ball.shape.width < target.x + target.r &&
-            ball.shape.x + ball.shape.width > target.x - target.r) {
-          createjs.Tween.get(ball.shape)
-            .to({alpha: 0, y: ball.shape.y - 50}, 500, createjs.Ease.quadOut)
+        if (ball.entity.x - ball.entity.width < target.x + target.r &&
+            ball.entity.x + ball.entity.width > target.x - target.r) {
+          createjs.Tween.get(ball.entity)
+            .to({alpha: 0, y: ball.entity.y - 50}, 500, createjs.Ease.quadOut)
             .call(() => {
               ball.moveTo(Math.random() * -2 * AABB[3], (AABB[3] / 2));
-              ball.shape.alpha = 1;
+              ball.entity.alpha = 1;
             });
         }
       }
@@ -89,7 +89,7 @@ export default class DodgeFalling extends Minigame {
     }
 
     this.ball.move();
-    if (ball.shape.x + ball.shape.width > AABB[3]) {
+    if (ball.entity.x + ball.entity.width > AABB[3]) {
       document.dispatchEvent(new Event('lose'));
       ball.moveTo(Math.random() * -2 * AABB[3], (AABB[3] / 2));
     }
