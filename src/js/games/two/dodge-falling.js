@@ -20,23 +20,27 @@ export default class DodgeFalling extends Minigame {
   setupStage() {
     let box = new Moveable(this.stage, {
       aabb: AABB,
-      width: 50,
-      height: 50,
+      width: 100,
+      height: 100,
       x: 300
     });
     this.box = box;
-    box.graphics.beginFill('#369').drawRect(0, 0, 50, 50);
+    box.graphics.beginFill('#369').drawRect(0, 0, box.shape.width, box.shape.height);
+    box.reset = function() {
+      box.moveTo(Math.random() * (AABB[2] - box.shape.width), 0);
+      box.dy = 0;
+    };
 
     let player = new Moveable(this.stage, {
       aabb: AABB,
       width: 50,
-      height: 50,
+      height: 80,
       x: 225,
-      y: 450,
+      y: AABB[3] - 80,
       isBounded: true
     });
     this.player = player;
-    player.graphics.beginFill('#393').drawRect(0, 0, 50, 50);
+    player.graphics.beginFill('#393').drawRect(0, 0, player.shape.width, player.shape.height);
   }
 
   tick(event) {
@@ -44,8 +48,7 @@ export default class DodgeFalling extends Minigame {
     let player = this.player;
     if (isTouching(box, player)) {
       player.moveTo(0);
-      box.moveTo(undefined, 0);
-      box.dy = 0;
+      box.reset();
     }
 
     if (controls[this.key1]) {
@@ -58,8 +61,7 @@ export default class DodgeFalling extends Minigame {
     box.move();
 
     if (box.shape.y >= box.aabb[3]) {
-      box.moveTo(undefined, 0);
-      box.dy = 0;
+      box.reset();
     }
 
     this.stage.update();

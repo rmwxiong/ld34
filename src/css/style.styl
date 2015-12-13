@@ -2,6 +2,12 @@ body {
   color: #555;
   font-family: 'Average Sans', sans-serif;
   background-color: #1e1d1f;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 canvas {
@@ -10,6 +16,7 @@ canvas {
 }
 
 .key {
+  opacity: 0.3;
   background: #d3cfcc;
   border-color: #ece8e4 #dedad6 #c9c4c4;
   width: 40px;
@@ -19,7 +26,9 @@ canvas {
   border-style: solid;
   border-radius: 4px;
   float: left;
+  animation: keyIn 1s;
   &.pressed {
+    opacity: 0.6;
     -webkit-transform: scale(0.95, 0.95);
     -moz-transform: scale(0.95, 0.95);
     -ms-transform: scale(0.95, 0.95);
@@ -28,10 +37,41 @@ canvas {
   }
 }
 
+@keyframes keyIn {
+  0% {oapcity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0.3}
+}
+
+.game-container {
+  position: relative;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+.keys {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  animation: keysIn 1s;
+}
+
+@keyframes keysIn {
+  0% {opacity: 0; transform: translate(200px, 200px)}
+  50% {opacity: 1; transform: scale(1.2) translate(150px, 150px)}
+  100% {}
+}
+
 .keycap {
-  width: 33px;
-  height: 40px;
-  padding: 5px 0 0 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 45px;
   font-size: 18px;
   line-height: 1;
   background: #f5f3f1;
@@ -45,36 +85,19 @@ canvas {
   position: relative;
 }
 
-$arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  width: auto;
-  height: 45px;
-}
-
-
-.arrow-right {
-  @extends $arrow;
-}
-
 .arrow-down {
-  @extends $arrow;
   span {
     transform: rotate(90deg);
   }
 }
 
 .arrow-left {
-  @extends $arrow;
   span {
     transform: rotate(180deg);
   }
 }
 
 .arrow-up {
-  @extends $arrow;
   span {
     transform: rotate(270deg);
   }
