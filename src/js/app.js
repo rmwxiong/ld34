@@ -15,10 +15,16 @@ import Snapshot from './games/one/snapshot';
   let gameSpawns = [];
   document.addEventListener('lose', onLoss);
 
+  let highScore = localStorage.getItem('highScore') || 0;
+  let score = 0;
+  let startTime = Date.now();
+
   startGames();
 
   keyboard.bind('g', startGames);
   function startGames() {
+    startTime = Date.now();
+    score = 0;
     createjs.Ticker.setPaused(false);
     games.forEach(game => game.destroy());
     games = [];
@@ -40,7 +46,12 @@ import Snapshot from './games/one/snapshot';
 
   function onLoss() {
     console.log('You lose');
-    alert('You lost, press G to restart');
+    if (score > highScore) {
+      console.log('New high score!');
+      localStorage.setItem('highScore', score);
+      highScore = score;
+    }
+    // alert('You lost, press G to restart');
     createjs.Ticker.setPaused(true);
     gameSpawns.forEach(spawn => clearTimeout(spawn));
   }
@@ -48,5 +59,7 @@ import Snapshot from './games/one/snapshot';
   function tick(event) {
     if (createjs.Ticker.getPaused()) return;
     games.forEach(game => game.tick(event));
+    score = Math.floor((Date.now() - startTime) / 1000);
+    $('.score').html(score);
   }
 })();
