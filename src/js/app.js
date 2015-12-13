@@ -13,13 +13,17 @@ import Snapshot from './games/one/snapshot';
 
   let games = [];
   let game = new DodgeFalling(['left', 'right']);
-  // let game = new Snapshot(['space']);
   games.push(game);
+
+  setTimeout(() => {
+    let game3 = new Snapshot(['space']);
+    games.push(game3);
+  }, 10000);
 
   setTimeout(() => {
     let game2 = new StayBetween(['up', 'down']);
     games.push(game2);
-  }, 5000);
+  }, 20000);
 
   createjs.Ticker.addEventListener('tick', tick);
 

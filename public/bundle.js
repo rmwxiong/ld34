@@ -81,13 +81,17 @@
 
 	  var games = [];
 	  var game = new _gamesTwoDodgeFalling2['default'](['left', 'right']);
-	  // let game = new Snapshot(['space']);
 	  games.push(game);
+
+	  setTimeout(function () {
+	    var game3 = new _gamesOneSnapshot2['default'](['space']);
+	    games.push(game3);
+	  }, 10000);
 
 	  setTimeout(function () {
 	    var game2 = new _gamesTwoStayBetween2['default'](['up', 'down']);
 	    games.push(game2);
-	  }, 5000);
+	  }, 20000);
 
 	  createjs.Ticker.addEventListener('tick', tick);
 
@@ -129,7 +133,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
-	exports.push([module.id, "body {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border: 1px solid #ffd700;\n  height: 600px;\n  width: 900px;\n  display: flex;\n  color: #555;\n  font-family: 'Average Sans', sans-serif;\n  background-color: #1e1d1f;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\ncanvas {\n  background-color: #222;\n}\n.key {\n  opacity: 0.3;\n  background: #d3cfcc;\n  border-color: #ece8e4 #dedad6 #c9c4c4;\n  width: 40px;\n  height: 45px;\n  margin: 2px;\n  border-width: 3px 7px 10px;\n  border-style: solid;\n  border-radius: 4px;\n  float: left;\n  animation: keyIn 1s;\n}\n.key.pressed {\n  opacity: 0.6;\n  -webkit-transform: scale(0.95, 0.95);\n  -moz-transform: scale(0.95, 0.95);\n  -ms-transform: scale(0.95, 0.95);\n  -o-transform: scale(0.95, 0.95);\n  transform: scale(0.95, 0.95);\n}\n.game-container {\n  display: flex;\n  position: relative;\n  animation: fadeIn 1s;\n}\n.keys {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  animation: keysIn 1s;\n}\n.keycap {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n  height: 45px;\n  font-size: 18px;\n  line-height: 1;\n  background: #f5f3f1;\n  background: -webkit-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);\n  background: -moz-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);\n  background: -ms-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);\n  background: -o-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);\n  background: linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);\n  box-shadow: 0 0 10px rgba(0,0,0,0.15);\n  border-radius: 4px;\n  position: relative;\n}\n.arrow-down span {\n  transform: rotate(90deg);\n}\n.arrow-left span {\n  transform: rotate(180deg);\n}\n.arrow-up span {\n  transform: rotate(270deg);\n}\n@-moz-keyframes keyIn {\n  0% {\n    oapcity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.3;\n  }\n}\n@-webkit-keyframes keyIn {\n  0% {\n    oapcity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.3;\n  }\n}\n@-o-keyframes keyIn {\n  0% {\n    oapcity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.3;\n  }\n}\n@keyframes keyIn {\n  0% {\n    oapcity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.3;\n  }\n}\n@-moz-keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@-webkit-keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@-o-keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@-moz-keyframes keysIn {\n  0% {\n    opacity: 0;\n    transform: translate(200px, 200px);\n  }\n  50% {\n    opacity: 1;\n    transform: scale(1.2) translate(150px, 150px);\n  }\n}\n@-webkit-keyframes keysIn {\n  0% {\n    opacity: 0;\n    transform: translate(200px, 200px);\n  }\n  50% {\n    opacity: 1;\n    transform: scale(1.2) translate(150px, 150px);\n  }\n}\n@-o-keyframes keysIn {\n  0% {\n    opacity: 0;\n    transform: translate(200px, 200px);\n  }\n  50% {\n    opacity: 1;\n    transform: scale(1.2) translate(150px, 150px);\n  }\n}\n@keyframes keysIn {\n  0% {\n    opacity: 0;\n    transform: translate(200px, 200px);\n  }\n  50% {\n    opacity: 1;\n    transform: scale(1.2) translate(150px, 150px);\n  }\n}\n", ""]);
+	exports.push([module.id, "body {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border: 1px solid #ffd700;\n  height: 600px;\n  width: 900px;\n  display: flex;\n  color: #555;\n  font-family: 'Average Sans', sans-serif;\n  background-color: #1e1d1f;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\ncanvas {\n  background-color: #222;\n}\n.key {\n  opacity: 0.3;\n  background: #d3cfcc;\n  border-color: #ece8e4 #dedad6 #c9c4c4;\n  width: 40px;\n  height: 45px;\n  margin: 2px;\n  border-width: 3px 7px 10px;\n  border-style: solid;\n  border-radius: 4px;\n  float: left;\n  animation: keyIn 1s;\n}\n.key.pressed {\n  opacity: 0.6;\n  -webkit-transform: scale(0.95, 0.95);\n  -moz-transform: scale(0.95, 0.95);\n  -ms-transform: scale(0.95, 0.95);\n  -o-transform: scale(0.95, 0.95);\n  transform: scale(0.95, 0.95);\n}\n.game-container {\n  display: flex;\n  position: relative;\n  animation: fadeIn 1s;\n}\n.keys {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  animation: keysIn 1s;\n}\n.keycap {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n  height: 45px;\n  font-size: 18px;\n  line-height: 1;\n  background: #f5f3f1;\n  background: -webkit-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);\n  background: -moz-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);\n  background: -ms-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);\n  background: -o-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);\n  background: linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);\n  box-shadow: 0 0 10px rgba(0,0,0,0.15);\n  border-radius: 4px;\n  position: relative;\n}\n.arrow-down span {\n  transform: rotate(90deg);\n}\n.arrow-left span {\n  transform: rotate(180deg);\n}\n.arrow-up span {\n  transform: rotate(270deg);\n}\n@-moz-keyframes keyIn {\n  0% {\n    oapcity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.3;\n  }\n}\n@-webkit-keyframes keyIn {\n  0% {\n    oapcity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.3;\n  }\n}\n@-o-keyframes keyIn {\n  0% {\n    oapcity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.3;\n  }\n}\n@keyframes keyIn {\n  0% {\n    oapcity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.3;\n  }\n}\n@-moz-keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@-webkit-keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@-o-keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@-moz-keyframes keysIn {\n  0% {\n    opacity: 0;\n    transform: translate(90px, 90px);\n  }\n  50% {\n    opacity: 1;\n    transform: scale(1.2) translate(70px, 70px);\n  }\n}\n@-webkit-keyframes keysIn {\n  0% {\n    opacity: 0;\n    transform: translate(90px, 90px);\n  }\n  50% {\n    opacity: 1;\n    transform: scale(1.2) translate(70px, 70px);\n  }\n}\n@-o-keyframes keysIn {\n  0% {\n    opacity: 0;\n    transform: translate(90px, 90px);\n  }\n  50% {\n    opacity: 1;\n    transform: scale(1.2) translate(70px, 70px);\n  }\n}\n@keyframes keysIn {\n  0% {\n    opacity: 0;\n    transform: translate(90px, 90px);\n  }\n  50% {\n    opacity: 1;\n    transform: scale(1.2) translate(70px, 70px);\n  }\n}\n", ""]);
 
 /***/ },
 /* 4 */
@@ -1272,7 +1276,6 @@
 	          var $element = $(element);
 	          if (!$element.children('.keys')[0]) $element.append('<div class="keys"></div>');
 	          var $keys = $element.children('.keys');
-	          console.log($keys);
 	          var keyDiv = $.parseHTML((0, _keyTemplate2['default'])(key));
 	          $keys.append(keyDiv);
 	          _this.keyboard.bind(key, function (e) {
@@ -1777,9 +1780,8 @@
 	var _moveable2 = _interopRequireDefault(_moveable);
 
 	var GAME_NAME = 'dodge-falling';
-	var PLAYER_SPEED = 2;
-	var AABB = [0, 0, 500, 500];
-	var BALL_SIZE = 50;
+	var AABB = [0, 0, 300, 300];
+	var BALL_SIZE = 25;
 
 	var DodgeFalling = (function (_Minigame) {
 	  _inherits(DodgeFalling, _Minigame);
@@ -1801,21 +1803,67 @@
 	        aabb: AABB,
 	        width: BALL_SIZE,
 	        height: BALL_SIZE,
-	        y: (AABB[3] - BALL_SIZE) / 2,
-	        dx: 1
+	        y: AABB[3] / 2,
+	        x: -300,
+	        dx: 10
 	      });
 	      this.ball = ball;
 	      ball.graphics.beginFill('#393').drawCircle(0, 0, ball.shape.width);
 
-	      var target = new createjs.Shape();
-	      target.graphics.setStrokeStyle(3).beginStroke('#369').drawCircle(250, 250, 150);
+	      var target = new createjs.Container();
+	      target.x = AABB[2] / 2;
+	      target.y = AABB[3] / 2;
+	      target.readyToFire = true;
+	      target.charge = 1;
+	      this.target = target;
+
+	      var ring = new createjs.Shape();
+	      target.ring = ring;
+	      target.r = ring.r = AABB[2] / 25;
+	      ring.graphics.setStrokeStyle(3);
+	      ring.drawArc = function (charge) {
+	        ring.graphics.clear();
+	        ring.graphics.setStrokeStyle(3).beginStroke('#369').arc(0, 0, ring.r, -0.5 * Math.PI, (charge - 0.25) * 2 * Math.PI);
+	      };
+	      ring.drawArc(1);
+	      target.updateCharge = function (delta) {
+	        target.charge += delta / 1500;
+	        if (target.charge < 1) {
+	          ring.alpha = target.charge;
+	          ring.drawArc(target.charge);
+	        } else {
+	          ring.drawArc(1);
+	          target.readyToFire = true;
+	          createjs.Tween.get(ring).to({});
+	        }
+	      };
+
+	      target.addChild(ring);
 	      this.stage.addChild(target);
 	      this.stage.update();
 	    }
 	  }, {
 	    key: 'tick',
 	    value: function tick(event) {
-	      if (_controls.controls[this.key]) {}
+	      var target = this.target;
+	      var ball = this.ball;
+	      if (_controls.controls[this.key]) {
+	        if (target.readyToFire) {
+	          target.ring.graphics.beginFill('#69b').drawCircle(0, 0, target.r);
+	          target.readyToFire = false;
+	          target.charge = 0;
+	          if (ball.shape.x - ball.shape.width < target.x + target.r && ball.shape.x + ball.shape.width > target.x - target.r) {
+	            createjs.Tween.get(ball.shape).to({ alpha: 0, y: ball.shape.y - 50 }, 500, createjs.Ease.quadOut).call(function () {
+	              ball.moveTo(Math.random() * -2 * AABB[3], AABB[3] / 2);
+	              ball.shape.alpha = 1;
+	            });
+	          }
+	        }
+	      }
+
+	      if (target.readyToFire === false) {
+	        target.updateCharge(event.delta);
+	      }
 
 	      this.ball.move();
 	      this.stage.update();

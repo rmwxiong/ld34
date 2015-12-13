@@ -11,7 +11,6 @@ class Controls {
       let $element = $(element);
       if (!$element.children('.keys')[0]) $element.append('<div class="keys"></div>');
       let $keys = $element.children('.keys');
-      console.log($keys);
       let keyDiv = $.parseHTML(renderKey(key));
       $keys.append(keyDiv);
       this.keyboard.bind(key, e => {
