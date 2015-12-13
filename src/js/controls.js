@@ -14,7 +14,8 @@ class Controls {
       console.log($keys);
       let keyDiv = $.parseHTML(renderKey(key));
       $keys.append(keyDiv);
-      this.keyboard.bind(key, () => {
+      this.keyboard.bind(key, e => {
+        e.preventDefault();
         this[key] = true;
         $(keyDiv).addClass('pressed');
       }, () => {

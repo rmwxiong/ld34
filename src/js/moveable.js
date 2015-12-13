@@ -45,8 +45,9 @@ export default class Moveable {
     }
   }
 
-  move() {
-    this.moveBy(this.dx, this.dy);
+  move(delta) {
+    delta = delta || 16;
+    this.moveBy(this.dx * delta / 100, this.dy * delta / 100);
   }
 
   isOnBoundary() {
