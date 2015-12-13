@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Two buttons and Growing</title>
+    <title>Two Buttons</title>
     <link href='https://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 <div class="main-container">
 
+  <div class="loading">Loading...</div>
+
   <div class="main-menu">
     <div class="title-page">
+      <div class="scores-container hidden">
+        <div class="last-score">Last Score: <span class="last-score-value">0</span></div>
+        <div class="high-score">High Score: <span class="high-score-value">0</span></div>
+      </div>
+
       <h1 class="title">Two Buttons <span class="title-extra hidden">and Growing</span></h1>
       <div class="navigation">
         <div class="nav-key">
@@ -28,30 +35,69 @@
       </div>
     </div>
 
-    <div class="instructions">
-      Just a simple game with two buttons. Use the left and right arrow keys to dodge the falling blocks!
+    <div class="instructions-page hidden">
+      <div class="instructions">
+        Just a simple game with two buttons.
+        <br>
+        Use the left and right arrow keys to dodge the falling blocks!
+      </div>
+      <div class="navigation">
+        <div class="nav-key">
+          <div class="key">
+            <div class="arrow-left keycap static"><span>&#10140;</span></div>
+          </div>
+          <div class="nav-key-label">Main Menu</div>
+        </div>
+
+        <div class="nav-key">
+          <div class="key">
+            <div class="arrow-right keycap static"><span>&#10140;</span></div>
+          </div>
+          <div class="nav-key-label">Play</div>
+        </div>
+      </div>
     </div>
+
+    <div class="credits">Made in 48 hours by Bogden for Ludum Dare 34</div>
   </div>
+  <div class="games"></div>
   <div class="score"></div>
+  <div class="continue">Press any key to continue</div>
 </div>
 
+
+<script id="instructions-real" type="text/template">
+  <div class="instructions-intro">
+    More buttons?!
+    <br>
+    Oh well, I suppose you have to watch for the controls to survive.
+  </div>
+
+  <div id="gi1"class="game-instruction">Game 1: <span class="game-info">Dodge the falling blocks</span></div>
+  <div id="gi2"class="game-instruction">Game 2: <span class="game-info locked">(Unlocks at 14 points)</span></div>
+  <div id="gi3"class="game-instruction">Game 3: <span class="game-info locked">(Unlocks at 28 points)</span></div>
+  <div id="gi4"class="game-instruction">Game 4: <span class="game-info locked">(Unlocks at 41 points)</span></div>
+  <div id="gi5"class="game-instruction">Game 5: <span class="game-info locked">(Unlocks at 55 points)</span></div>
+  <div id="gi6"class="game-instruction">Game 6: <span class="game-info locked">(Unlocks at 69 points)</span></div>
+</script>
+
 <script id="instructions-g1" type="text/template">
-  <div class="game-instruction">Game 1: Dodge the falling blocks</div>
+  Dodge the falling blocks
 </script>
 <script id="instructions-g2" type="text/template">
-  <div class="game-instruction">Game 2: Hit the target as it passes by</div>
+  Hit the target as it passes
 </script>
 <script id="instructions-g3" type="text/template">
-  <div class="game-instruction">Game 3: Stay between the lines</div>
+  Stay between the lines
 </script>
 <script id="instructions-g4" type="text/template">
-  <div class="game-instruction">Game 4: Collect the dots</div>
+  Collect the dots
 </script>
-<script id="instructions-g2" type="text/template">
-  <div class="game-instruction">Game 5: Solve the math problems</div>
+<script id="instructions-g5" type="text/template">
+  Solve the math problems
 </script>
-<script id="instructions-g2" type="text/template">
-  <div class="game-instruction">Game 6: Match the shapes with your keyboard</div>
+<script id="instructions-g6" type="text/template">
+  Match the shapes with your keyboard
 </script>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

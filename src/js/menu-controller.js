@@ -1,47 +1,72 @@
 
 class MenuController {
   constructor() {
+    this.menuLeft = this.menuLeft.bind(this);
+    this.menuRight = this.menuRight.bind(this);
     this.menuState = 'main';
+    this.realInstructions = false;
+    this.gameCount = 0;
     // instructions
   }
 
   init(startGame) {
     this.startGame = startGame;
-    $('.instructions').hide();
-    $('.instructions').html("Who added all these buttons?! <br> Oh well, I suppose you'll have to watch for the controls to survive.");
-    $('.instructions').append($('#instructions-g1').html());
+    $('.instructions-page').hide();
+  }
+
+  showRealInstructions() {
+    document.title = 'Two Buttons and Growing';
+    $('.title-extra').removeClass('hidden');
+    $('.scores-container').removeClass('hidden');
+    $('.instructions').html($('#instructions-real').html());
   }
 
   menuLeft() {
     if (this.menuState === 'main') {
       this.showInstructions();
+      this.menuState = 'instructions';
+    } else if (this.menuState === 'instructions') {
+      this.showMenu();
+      this.menuState = 'main';
     }
+  }
+
+  hide() {
+    $('.main-menu').hide();
   }
 
   menuRight() {
-    if (this.menuState === 'main') {
-      this.startGame();
-    }
+    this.hideMenu();
+    this.hideInstructions();
+    this.startGame();
+  }
+
+  unlockGame(n) {
+    console.log('unlock', n);
+    $('#gi' + n + ' .game-info').removeClass('locked').html($('#instructions-g' + n).html());
   }
 
   hideMenu() {
-    $('.main-menu').addClass('hidden');
+    $('.title-page').addClass('hidden');
   }
 
   showMenu() {
-    $('.main-menu').removeClass('hidden');
-    $('.title-extra').removeClass('hidden');
+    $('.main-menu').show();
+    $('.title-page').show();
+    $('.instructions-page').hide();
+    $('.title-page').removeClass('hidden');
+    $('.instructions-page').addClass('hidden');
   }
 
   showInstructions() {
-    $('.instructions').show();
-    $('.instructions').removeClass('hidden');
-    $('.main-menu').addClass('hidden');
+    $('.instructions-page').show();
+    $('.title-page').hide();
+    $('.instructions-page').removeClass('hidden');
+    $('.title-page').addClass('hidden');
   }
 
   hideInstructions() {
-    $('.instructions').addClass('hidden');
-    $('.main-menu').removeClass('hidden');
+    $('.instructions-page').addClass('hidden');
   }
 }
 

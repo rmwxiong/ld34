@@ -3,105 +3,126 @@
 import '../css/style.styl';
 import keyboard from 'keyboardjs';
 import {controls} from './controls';
+import {menuController} from './menu-controller';
 import DodgeFalling from './games/two/dodge-falling';
 import StayBetween from './games/two/stay-between';
 import Snapshot from './games/one/snapshot';
 import Collect from './games/four/collect';
 import bgm from 'file!../ld34bgm.mp3';
 
+const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
+
 (function() {
+  setupSounds();
   createjs.Ticker.setFPS(60);
   createjs.Ticker.setPaused(true);
   controls.init(keyboard);
   createjs.Ticker.addEventListener('tick', tick);
   let games = [];
   let gameSpawns = [];
+  let playBgm = () => createjs.Sound.play('bgm');
+  let realInstructionsShown = false;
   document.addEventListener('lose', onLoss);
 
   let highScore = localStorage.getItem('highScore') || 0;
+  $('.high-score-value').html(highScore);
   let score = 0;
   let startTime = Date.now();
+  let gameCount = 0;
 
-  $('.instructions').hide();
-  $('.instructions').html("Who added all these buttons?! <br> Oh well, I suppose you'll have to watch for the controls to survive.");
-  $('.instructions').append($('#instructions-g1').html());
+  menuController.init(startGames);
 
-  setupSounds();
+  GAME_THRESHOLDS.forEach((threshold, index) => {
+    let n = index + 1;
+    if (highScore >= threshold) {
+      if (n === 2) {
+        menuController.showRealInstructions();
+      }
+      menuController.unlockGame(n);
+    }
+  });
   // startGames();
 
-  keyboard.bind('right', startGames);
-  keyboard.bind('left', showMenu);
+  keyboard.bind('right', menuController.menuRight);
+  keyboard.bind('left', menuController.menuLeft);
+
   function setupSounds() {
     let sounds = [{
       id: 'bgm',
       src: bgm.substring(1)
     }];
     createjs.Sound.addEventListener('fileload', event => {
-      createjs.Sound.play(event.src);
+      $('.loading').hide();
+      $('.main-menu').show();
+      playBgm = () => createjs.Sound.play(event.src);
     });
     createjs.Sound.registerSounds(sounds, '/');
   }
 
-  function hideMenu() {
-    $('.main-menu').addClass('hidden');
-  }
-
-  function showMenu() {
-    $('.main-menu').removeClass('hidden');
-    $('.title-extra').removeClass('hidden');
-  }
-
-  function showInstructions() {
-    $('.instructions').show();
-    $('.instructions').removeClass('hidden');
-    $('.main-menu').addClass('hidden');
-  }
-
-  function hideInstructions() {
-    $('.instructions').addClass('hidden');
-    $('.main-menu').removeClass('hidden');
+  function addGame(Game, controls, time) {
+    let gameSpawn = setTimeout(() => {
+      let game = new Game(controls);
+      games.push(game);
+      gameCount++;
+      if (gameCount > 1 && !realInstructionsShown) {
+        menuController.showRealInstructions();
+      }
+      if (realInstructionsShown) {
+        menuController.unlockGame(gameCount);
+      }
+    }, time);
+    gameSpawns.push(gameSpawn);
   }
 
   function startGames() {
-    hideMenu();
+    $('.games').removeClass('lost');
+    $('.score').show();
+    gameCount = 0;
+    menuController.hide();
+    controls.reset();
     startTime = Date.now();
     score = 0;
     createjs.Ticker.setPaused(false);
+    gameSpawns.forEach(spawn => clearTimeout(spawn));
     games.forEach(game => game.destroy());
     games = [];
-    // let game = new Collect(['w', 'a', 's', 'd']);
-    let game = new DodgeFalling(['left', 'right']);
-    games.push(game);
+    // let game = new Collect(['w', 'a', 's', 'd']);\
+    playBgm();
+    addGame(DodgeFalling, ['left', 'right'], 0);
+    addGame(Snapshot, ['space'], 13710);
+    addGame(StayBetween, ['up', 'down'], 27420);
+    addGame(Collect, ['w', 'a', 's', 'd'], 41140);
+  }
 
-    let game1spawn = setTimeout(() => {
-      let game3 = new Snapshot(['space']);
-      games.push(game3);
-    }, 13710);
-    gameSpawns.push(game1spawn);
-
-    let game2spawn = setTimeout(() => {
-      let game2 = new StayBetween(['up', 'down']);
-      games.push(game2);
-    }, 27420);
-    gameSpawns.push(game2spawn);
-
-    let game3spawn = setTimeout(() => {
-      let game3 = new Collect(['w', 'a', 's', 'd']);
-      games.push(game3);
-    }, 41140);
-    gameSpawns.push(game3spawn);
+  function anyKey() {
+    $('.score').hide();
+    $('.continue').hide();
+    $(document).off('keydown', anyKey);
+    $('.games').addClass('lost');
+    menuController.showMenu();
+    keyboard.bind('right', menuController.menuRight);
+    keyboard.bind('left', menuController.menuLeft);
   }
 
   function onLoss() {
+    controls.reset();
+    createjs.Sound.stop('bgm');
     console.log('You lose');
     if (score > highScore) {
       console.log('New high score!');
       localStorage.setItem('highScore', score);
       highScore = score;
+      $('.high-score-value').html(highScore);
     }
-    // alert('You lost, press G to restart');
+    $('.last-score-value').html(score);
     createjs.Ticker.setPaused(true);
     gameSpawns.forEach(spawn => clearTimeout(spawn));
+
+    // Set timeout add any key continue
+    setTimeout(() => {
+      $('.continue').show();
+      $(document).on('keydown', anyKey);
+    }, 500);
   }
 
   function tick(event) {

@@ -11,7 +11,7 @@ export default class Minigame {
   initStage() {
     let $canvas = $(`<canvas id=${this.id} width=300 height=300></canvas>`);
     let $container = $('<div class="game-container"></div>').append($canvas);
-    $('.main-container').append($container);
+    $('.games').append($container);
     this.$canvas = $canvas;
     this.$container = $container;
     this.stage = new createjs.Stage($canvas[0]);

@@ -25,6 +25,11 @@ class Controls {
     }
   }
 
+  reset() {
+    this.boundKeys = {};
+    this.keyboard.reset();
+  }
+
   init(keyboard) {
     this.keyboard = keyboard;
   }
