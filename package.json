@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Two buttons and growing",
   "scripts": {
+    "postinstall": "webpack --config ./webpack-production.config.js --progress --colors && cp ./index.html ./public/index.html",
     "start": "node server.js",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,9 +22,6 @@
     "doiuse": "^0.3.2",
     "eslint": "^1.10.3",
     "eslint-config-google": "^0.3.0",
-    "postcss": "^4.1.8",
-    "postcss-loader": "^0.4.1",
-    "postcss-nested": "^0.3.1",
     "style-loader": "^0.12.1",
     "stylus-loader": "^1.4.2",
     "webpack": "^1.8.11",
@@ -31,7 +29,13 @@
     "wordwrap": "1.0.0"
   },
   "dependencies": {
+    "css-loader": "^0.14.0",
+    "cssnext": "^1.4.0",
     "express": "^4.13.3",
-    "keyboardjs": "^2.2.0"
+    "keyboardjs": "^2.2.0",
+    "style-loader": "^0.12.1",
+    "stylus": "^0.52.4",
+    "stylus-loader": "^1.4.2",
+    "webpack": "^1.12.9"
   }
 }

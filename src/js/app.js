@@ -8,6 +8,7 @@ import StayBetween from './games/two/stay-between';
 import Snapshot from './games/one/snapshot';
 
 (function() {
+  alert('hi');
   createjs.Ticker.setFPS(60);
   controls.init(keyboard);
   createjs.Ticker.addEventListener('tick', tick);

@@ -9,7 +9,7 @@ module.exports = {
   },
   output: {
     path: require('path').resolve('public'),
-    publicPath: '/',
+    publicPath: '/public/',
     filename: 'bundle.js'
   },
   module: {
@@ -25,5 +25,13 @@ module.exports = {
       loader: 'babel-loader'
     }]
   },
-  plugins: []
+  plugins: [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      compress: {
+        warnings: false
+      }
+    })
+  ]
 };
