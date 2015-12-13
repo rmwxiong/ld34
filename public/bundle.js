@@ -1,2 +1,1912 @@
-!function(e){function t(i){if(n[i])return n[i].exports;var r=n[i]={exports:{},id:i,loaded:!1};return e[i].call(r.exports,r,r.exports,t),r.loaded=!0,r.exports}var n={};return t.m=e,t.c=n,t.p="/public/",t(0)}([function(e,t,n){e.exports=n(1)},function(e,t,n){"use strict";function i(e){return e&&e.__esModule?e:{"default":e}}n(2);var r=n(6),o=i(r),s=n(11),a=n(13),l=i(a),c=n(17),d=i(c),u=n(18),h=i(u);!function(){function e(){createjs.Ticker.setPaused(!1),i.forEach(function(e){return e.destroy()}),i=[];var e=new l["default"](["left","right"]);i.push(e);var t=setTimeout(function(){var e=new h["default"](["space"]);i.push(e)},1e4);r.push(t);var n=setTimeout(function(){var e=new d["default"](["up","down"]);i.push(e)},2e4);r.push(n)}function t(){console.log("You lose"),alert("You lost, press G to restart"),createjs.Ticker.setPaused(!0),r.forEach(function(e){return clearTimeout(e)})}function n(e){createjs.Ticker.getPaused()||i.forEach(function(t){return t.tick(e)})}alert("hi"),createjs.Ticker.setFPS(60),s.controls.init(o["default"]),createjs.Ticker.addEventListener("tick",n);var i=[],r=[];document.addEventListener("lose",t),e(),o["default"].bind("g",e)}()},function(e,t,n){var i=n(3);"string"==typeof i&&(i=[[e.id,i,""]]);n(5)(i,{});i.locals&&(e.exports=i.locals)},function(e,t,n){t=e.exports=n(4)(),t.push([e.id,".keycap,body{display:flex}body{justify-content:center;align-items:center;border:1px solid gold;height:600px;width:900px;color:#555;font-family:'Average Sans',sans-serif;background-color:#1e1d1f;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.key,.keycap{height:45px;border-radius:4px}canvas{background-color:#222}.key{opacity:.3;background:#d3cfcc;border-color:#ece8e4 #dedad6 #c9c4c4;width:40px;margin:2px;border-width:3px 7px 10px;border-style:solid;float:left;animation:keyIn 1s}.key.pressed{opacity:.6;-webkit-transform:scale(.95,.95);-moz-transform:scale(.95,.95);-ms-transform:scale(.95,.95);-o-transform:scale(.95,.95);transform:scale(.95,.95)}.game-container{display:flex;position:relative;animation:fadeIn 1s}.keys{position:absolute;top:5px;left:5px;animation:keysIn 1s}.keycap{align-items:center;justify-content:center;padding:0;font-size:18px;line-height:1;background:#f5f3f1;background:-webkit-linear-gradient(left,#e5e2e1,#f5f3f1,#e5e2e1);background:-moz-linear-gradient(left,#e5e2e1,#f5f3f1,#e5e2e1);background:-ms-linear-gradient(left,#e5e2e1,#f5f3f1,#e5e2e1);background:-o-linear-gradient(left,#e5e2e1,#f5f3f1,#e5e2e1);background:linear-gradient(left,#e5e2e1,#f5f3f1,#e5e2e1);box-shadow:0 0 10px rgba(0,0,0,.15);position:relative}.arrow-down span{transform:rotate(90deg)}.arrow-left span{transform:rotate(180deg)}.arrow-up span{transform:rotate(270deg)}@-moz-keyframes keyIn{0%{oapcity:0}50%{opacity:1}100%{opacity:.3}}@-webkit-keyframes keyIn{0%{oapcity:0}50%{opacity:1}100%{opacity:.3}}@-o-keyframes keyIn{0%{oapcity:0}50%{opacity:1}100%{opacity:.3}}@keyframes keyIn{0%{oapcity:0}50%{opacity:1}100%{opacity:.3}}@-moz-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@-webkit-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@-o-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@-moz-keyframes keysIn{0%{opacity:0;transform:translate(90px,90px)}50%{opacity:1;transform:scale(1.2) translate(70px,70px)}}@-webkit-keyframes keysIn{0%{opacity:0;transform:translate(90px,90px)}50%{opacity:1;transform:scale(1.2) translate(70px,70px)}}@-o-keyframes keysIn{0%{opacity:0;transform:translate(90px,90px)}50%{opacity:1;transform:scale(1.2) translate(70px,70px)}}@keyframes keysIn{0%{opacity:0;transform:translate(90px,90px)}50%{opacity:1;transform:scale(1.2) translate(70px,70px)}}",""])},function(e,t){e.exports=function(){var e=[];return e.toString=function(){for(var e=[],t=0;t<this.length;t++){var n=this[t];n[2]?e.push("@media "+n[2]+"{"+n[1]+"}"):e.push(n[1])}return e.join("")},e.i=function(t,n){"string"==typeof t&&(t=[[null,t,""]]);for(var i={},r=0;r<this.length;r++){var o=this[r][0];"number"==typeof o&&(i[o]=!0)}for(r=0;r<t.length;r++){var s=t[r];"number"==typeof s[0]&&i[s[0]]||(n&&!s[2]?s[2]=n:n&&(s[2]="("+s[2]+") and ("+n+")"),e.push(s))}},e}},function(e,t,n){function i(e,t){for(var n=0;n<e.length;n++){var i=e[n],r=u[i.id];if(r){r.refs++;for(var o=0;o<r.parts.length;o++)r.parts[o](i.parts[o]);for(;o<i.parts.length;o++)r.parts.push(a(i.parts[o],t))}else{for(var s=[],o=0;o<i.parts.length;o++)s.push(a(i.parts[o],t));u[i.id]={id:i.id,refs:1,parts:s}}}}function r(e){for(var t=[],n={},i=0;i<e.length;i++){var r=e[i],o=r[0],s=r[1],a=r[2],l=r[3],c={css:s,media:a,sourceMap:l};n[o]?n[o].parts.push(c):t.push(n[o]={id:o,parts:[c]})}return t}function o(){var e=document.createElement("style"),t=f();return e.type="text/css",t.appendChild(e),e}function s(){var e=document.createElement("link"),t=f();return e.rel="stylesheet",t.appendChild(e),e}function a(e,t){var n,i,r;if(t.singleton){var a=b++;n=y||(y=o()),i=l.bind(null,n,a,!1),r=l.bind(null,n,a,!0)}else e.sourceMap&&"function"==typeof URL&&"function"==typeof URL.createObjectURL&&"function"==typeof URL.revokeObjectURL&&"function"==typeof Blob&&"function"==typeof btoa?(n=s(),i=d.bind(null,n),r=function(){n.parentNode.removeChild(n),n.href&&URL.revokeObjectURL(n.href)}):(n=o(),i=c.bind(null,n),r=function(){n.parentNode.removeChild(n)});return i(e),function(t){if(t){if(t.css===e.css&&t.media===e.media&&t.sourceMap===e.sourceMap)return;i(e=t)}else r()}}function l(e,t,n,i){var r=n?"":i.css;if(e.styleSheet)e.styleSheet.cssText=g(t,r);else{var o=document.createTextNode(r),s=e.childNodes;s[t]&&e.removeChild(s[t]),s.length?e.insertBefore(o,s[t]):e.appendChild(o)}}function c(e,t){var n=t.css,i=t.media;t.sourceMap;if(i&&e.setAttribute("media",i),e.styleSheet)e.styleSheet.cssText=n;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(n))}}function d(e,t){var n=t.css,i=(t.media,t.sourceMap);i&&(n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(i))))+" */");var r=new Blob([n],{type:"text/css"}),o=e.href;e.href=URL.createObjectURL(r),o&&URL.revokeObjectURL(o)}var u={},h=function(e){var t;return function(){return"undefined"==typeof t&&(t=e.apply(this,arguments)),t}},p=h(function(){return/msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase())}),f=h(function(){return document.head||document.getElementsByTagName("head")[0]}),y=null,b=0;e.exports=function(e,t){t=t||{},"undefined"==typeof t.singleton&&(t.singleton=p());var n=r(e);return i(n,t),function(e){for(var o=[],s=0;s<n.length;s++){var a=n[s],l=u[a.id];l.refs--,o.push(l)}if(e){var c=r(e);i(c,t)}for(var s=0;s<o.length;s++){var l=o[s];if(0===l.refs){for(var d=0;d<l.parts.length;d++)l.parts[d]();delete u[l.id]}}}};var g=function(){var e=[];return function(t,n){return e[t]=n,e.filter(Boolean).join("\n")}}()},function(e,t,n){var i=n(7),r=n(8),o=n(9),s=new i;s.setLocale("us",n(10)),t=e.exports=s,t.Keyboard=i,t.Locale=r,t.KeyCombo=o},function(e,t,n){(function(t){function i(e,t,n,i){this._locale=null,this._currentContext=null,this._contexts={},this._listeners=[],this._appliedListeners=[],this._locales={},this._targetElement=null,this._targetWindow=null,this._targetPlatform="",this._targetUserAgent="",this._isModernBrowser=!1,this._targetKeyDownBinding=null,this._targetKeyUpBinding=null,this._targetResetBinding=null,this._paused=!1,this.setContext("global"),this.watch(e,t,n,i)}var r=n(8),o=n(9);i.prototype.setLocale=function(e,t){var n=null;"string"==typeof e?t?(n=new r(e),t(n,this._targetPlatform,this._targetUserAgent)):n=this._locales[e]||null:(n=e,e=n._localeName),this._locale=n,this._locales[e]=n,n&&(this._locale.pressedKeys=n.pressedKeys)},i.prototype.getLocale=function(e){return e||(e=this._locale.localeName),this._locales[e]||null},i.prototype.bind=function(e,t,n,i){if((null===e||"function"==typeof e)&&(i=n,n=t,t=e,e=null),e&&"object"==typeof e&&"number"==typeof e.length)for(var r=0;r<e.length;r+=1)this.bind(e[r],t,n);else this._listeners.push({keyCombo:e?new o(e):null,pressHandler:t||null,releaseHandler:n||null,preventRepeat:i||!1,preventRepeatByDefault:i||!1})},i.prototype.addListener=i.prototype.bind,i.prototype.on=i.prototype.bind,i.prototype.unbind=function(e,t,n){if((null===e||"function"==typeof e)&&(n=t,t=e,e=null),e&&"object"==typeof e&&"number"==typeof e.length)for(var i=0;i<e.length;i+=1)this.unbind(e[i],t,n);else for(var i=0;i<this._listeners.length;i+=1){var r=this._listeners[i],o=!e&&!r.keyCombo||r.keyCombo.isEqual(e),s=!t&&!n||!t&&!r.pressHandler||t===r.pressHandler,a=!t&&!n||!n&&!r.releaseHandler||n===r.releaseHandler;o&&s&&a&&(this._listeners.splice(i,1),i-=1)}},i.prototype.removeListener=i.prototype.unbind,i.prototype.off=i.prototype.unbind,i.prototype.setContext=function(e){this._locale&&this.releaseAllKeys(),this._contexts[e]||(this._contexts[e]=[]),this._listeners=this._contexts[e],this._currentContext=e},i.prototype.getContext=function(){return this._currentContext},i.prototype.withContext=function(e,t){var n=this.getContext();this.setContext(e),t(),this.setContext(n)},i.prototype.watch=function(e,n,i,r){var o=this;this.stop(),e&&null!==e||(e=t),"number"==typeof e.nodeType&&(r=i,i=n,n=e,e=t);var s=e.navigator&&e.navigator.userAgent||"",a=e.navigator&&e.navigator.platform||"";n&&null!==n||(n=e.document),i&&null!==i||(i=a),r&&null!==r||(r=s),this._isModernBrowser=!!e.addEventListener,this._targetKeyDownBinding=function(e){o.pressKey(e.keyCode,e)},this._targetKeyUpBinding=function(e){o.releaseKey(e.keyCode,e)},this._targetResetBinding=function(e){o.releaseAllKeys(e)},this._bindEvent(n,"keydown",this._targetKeyDownBinding),this._bindEvent(n,"keyup",this._targetKeyUpBinding),this._bindEvent(e,"focus",this._targetResetBinding),this._bindEvent(e,"blur",this._targetResetBinding),this._targetElement=n,this._targetWindow=e,this._targetPlatform=i,this._targetUserAgent=r},i.prototype.stop=function(){this._targetElement&&this._targetWindow&&(this._unbindEvent(this._targetElement,"keydown",this._targetKeyDownBinding),this._unbindEvent(this._targetElement,"keyup",this._targetKeyUpBinding),this._unbindEvent(this._targetWindow,"focus",this._targetResetBinding),this._unbindEvent(this._targetWindow,"blur",this._targetResetBinding),this._targetWindow=null,this._targetElement=null)},i.prototype.pressKey=function(e,t){if(!this._paused){if(!this._locale)throw new Error("Locale not set");this._locale.pressKey(e),this._applyBindings(t)}},i.prototype.releaseKey=function(e,t){if(!this._paused){if(!this._locale)throw new Error("Locale not set");this._locale.releaseKey(e),this._clearBindings(t)}},i.prototype.releaseAllKeys=function(e){if(!this._paused){if(!this._locale)throw new Error("Locale not set");this._locale.pressedKeys.length=0,this._clearBindings(e)}},i.prototype.pause=function(){this._paused||(this._locale&&this.releaseAllKeys(),this._paused=!0)},i.prototype.resume=function(){this._paused=!1},i.prototype.reset=function(){this.releaseAllKeys(),this._listeners.length=0},i.prototype._bindEvent=function(e,t,n){return this._isModernBrowser?e.addEventListener(t,n,!1):e.attachEvent("on"+t,n)},i.prototype._unbindEvent=function(e,t,n){return this._isModernBrowser?e.removeEventListener(t,n,!1):e.detachEvent("on"+t,n)},i.prototype._getGroupedListeners=function(){var e=[],t=[],n=this._listeners;return"global"!==this._currentContext&&(n=[].concat(n,this._contexts.global)),n.sort(function(e,t){return e.keyCombo.keyNames.length<t.keyCombo.keyNames.length}).forEach(function(n){for(var i=-1,r=0;r<t.length;r+=1)t[r].isEqual(n.keyCombo)&&(i=r);-1===i&&(i=t.length,t.push(n.keyCombo)),e[i]||(e[i]=[]),e[i].push(n)}),e},i.prototype._applyBindings=function(e){var t=!1;e||(e={}),e.preventRepeat=function(){t=!0},e.pressedKeys=this._locale.pressedKeys.slice(0);for(var n=this._locale.pressedKeys.slice(0),i=this._getGroupedListeners(),r=0;r<i.length;r+=1){var s=i[r],a=s[0].keyCombo;if(null===a||a.check(n)){for(var l=0;l<s.length;l+=1){var c=s[l];null===a&&(c={keyCombo:new o(n.join("+")),pressHandler:c.pressHandler,releaseHandler:c.releaseHandler,preventRepeat:c.preventRepeat,preventRepeatByDefault:c.preventRepeatByDefault}),c.pressHandler&&!c.preventRepeat&&(c.pressHandler.call(this,e),t&&(c.preventRepeat=t,t=!1)),c.releaseHandler&&-1===this._appliedListeners.indexOf(c)&&this._appliedListeners.push(c)}if(a)for(var l=0;l<a.keyNames.length;l+=1){var d=n.indexOf(a.keyNames[l]);-1!==d&&(n.splice(d,1),l-=1)}}}},i.prototype._clearBindings=function(e){e||(e={});for(var t=0;t<this._appliedListeners.length;t+=1){var n=this._appliedListeners[t],i=n.keyCombo;null!==i&&i.check(this._locale.pressedKeys)||(n.preventRepeat=n.preventRepeatByDefault,n.releaseHandler.call(this,e),this._appliedListeners.splice(t,1),t-=1)}},e.exports=i}).call(t,function(){return this}())},function(e,t,n){function i(e){this.localeName=e,this.pressedKeys=[],this._appliedMacros=[],this._keyMap={},this._killKeyCodes=[],this._macros=[]}var r=n(9);i.prototype.bindKeyCode=function(e,t){"string"==typeof t&&(t=[t]),this._keyMap[e]=t},i.prototype.bindMacro=function(e,t){"string"==typeof t&&(t=[t]);var n=null;"function"==typeof t&&(n=t,t=null);var i={keyCombo:new r(e),keyNames:t,handler:n};this._macros.push(i)},i.prototype.getKeyCodes=function(e){var t=[];for(var n in this._keyMap){var i=this._keyMap[n].indexOf(e);i>-1&&t.push(0|n)}return t},i.prototype.getKeyNames=function(e){return this._keyMap[e]||[]},i.prototype.setKillKey=function(e){if("string"!=typeof e)this._killKeyCodes.push(e);else for(var t=this.getKeyCodes(e),n=0;n<t.length;n+=1)this.setKillKey(t[n])},i.prototype.pressKey=function(e){if("string"!=typeof e){for(var t=this.getKeyNames(e),n=0;n<t.length;n+=1)-1===this.pressedKeys.indexOf(t[n])&&this.pressedKeys.push(t[n]);this._applyMacros()}else for(var i=this.getKeyCodes(e),n=0;n<i.length;n+=1)this.pressKey(i[n])},i.prototype.releaseKey=function(e){if("string"==typeof e)for(var t=this.getKeyCodes(e),n=0;n<t.length;n+=1)this.releaseKey(t[n]);else{var i=this.getKeyNames(e),r=this._killKeyCodes.indexOf(e);if(r>-1)this.pressedKeys.length=0;else for(var n=0;n<i.length;n+=1){var o=this.pressedKeys.indexOf(i[n]);o>-1&&this.pressedKeys.splice(o,1)}this._clearMacros()}},i.prototype._applyMacros=function(){for(var e=this._macros.slice(0),t=0;t<e.length;t+=1){var n=e[t];if(n.keyCombo.check(this.pressedKeys)){n.handler&&(n.keyNames=n.handler(this.pressedKeys));for(var i=0;i<n.keyNames.length;i+=1)-1===this.pressedKeys.indexOf(n.keyNames[i])&&this.pressedKeys.push(n.keyNames[i]);this._appliedMacros.push(n)}}},i.prototype._clearMacros=function(){for(var e=0;e<this._appliedMacros.length;e+=1){var t=this._appliedMacros[e];if(!t.keyCombo.check(this.pressedKeys)){for(var n=0;n<t.keyNames.length;n+=1){var i=this.pressedKeys.indexOf(t.keyNames[n]);i>-1&&this.pressedKeys.splice(i,1)}t.handler&&(t.keyNames=null),this._appliedMacros.splice(e,1),e-=1}}},e.exports=i},function(e,t){function n(e){this.sourceStr=e,this.subCombos=n.parseComboStr(e),this.keyNames=this.subCombos.reduce(function(e,t){return e.concat(t)})}n.sequenceDeliminator=">>",n.comboDeliminator=">",n.keyDeliminator="+",n.parseComboStr=function(e){for(var t=n._splitStr(e,n.comboDeliminator),i=[],r=0;r<t.length;r+=1)i.push(n._splitStr(t[r],n.keyDeliminator));return i},n.prototype.check=function(e){for(var t=0,n=0;n<this.subCombos.length;n+=1)if(t=this._checkSubCombo(this.subCombos[n],t,e),-1===t)return!1;return!0},n.prototype.isEqual=function(e){if(!e||"string"!=typeof e&&"object"!=typeof e)return!1;if("string"==typeof e&&(e=new n(e)),this.subCombos.length!==e.subCombos.length)return!1;for(var t=0;t<this.subCombos.length;t+=1)if(this.subCombos[t].length!==e.subCombos[t].length)return!1;for(var t=0;t<this.subCombos.length;t+=1){for(var i=this.subCombos[t],r=e.subCombos[t].slice(0),o=0;o<i.length;o+=1){var s=i[o],a=r.indexOf(s);a>-1&&r.splice(a,1)}if(0!==r.length)return!1}return!0},n._splitStr=function(e,t){for(var n=e,i=t,r="",o=[],s=0;s<n.length;s+=1)s>0&&n[s]===i&&"\\"!==n[s-1]&&(o.push(r.trim()),r="",s+=1),r+=n[s];return r&&o.push(r.trim()),o},n.prototype._checkSubCombo=function(e,t,i){e=e.slice(0),i=i.slice(t);for(var r=t,o=0;o<e.length;o+=1){var s=e[o];if("\\"===s[0]){var a=s.slice(1);(a===n.comboDeliminator||a===n.keyDeliminator)&&(s=a)}var l=i.indexOf(s);if(l>-1&&(e.splice(o,1),o-=1,l>r&&(r=l),0===e.length))return r}return-1},e.exports=n},function(e,t){e.exports=function(e,t,n){e.bindKeyCode(3,["cancel"]),e.bindKeyCode(8,["backspace"]),e.bindKeyCode(9,["tab"]),e.bindKeyCode(12,["clear"]),e.bindKeyCode(13,["enter"]),e.bindKeyCode(16,["shift"]),e.bindKeyCode(17,["ctrl"]),e.bindKeyCode(18,["alt","menu"]),e.bindKeyCode(19,["pause","break"]),e.bindKeyCode(20,["capslock"]),e.bindKeyCode(27,["escape","esc"]),e.bindKeyCode(32,["space","spacebar"]),e.bindKeyCode(33,["pageup"]),e.bindKeyCode(34,["pagedown"]),e.bindKeyCode(35,["end"]),e.bindKeyCode(36,["home"]),e.bindKeyCode(37,["left"]),e.bindKeyCode(38,["up"]),e.bindKeyCode(39,["right"]),e.bindKeyCode(40,["down"]),e.bindKeyCode(41,["select"]),e.bindKeyCode(42,["printscreen"]),e.bindKeyCode(43,["execute"]),e.bindKeyCode(44,["snapshot"]),e.bindKeyCode(45,["insert","ins"]),e.bindKeyCode(46,["delete","del"]),e.bindKeyCode(47,["help"]),e.bindKeyCode(145,["scrolllock","scroll"]),e.bindKeyCode(187,["equal","equalsign","="]),e.bindKeyCode(188,["comma",","]),e.bindKeyCode(190,["period","."]),e.bindKeyCode(191,["slash","forwardslash","/"]),e.bindKeyCode(192,["graveaccent","`"]),e.bindKeyCode(219,["openbracket","["]),e.bindKeyCode(220,["backslash","\\"]),e.bindKeyCode(221,["closebracket","]"]),e.bindKeyCode(222,["apostrophe","'"]),e.bindKeyCode(48,["zero","0"]),e.bindKeyCode(49,["one","1"]),e.bindKeyCode(50,["two","2"]),e.bindKeyCode(51,["three","3"]),e.bindKeyCode(52,["four","4"]),e.bindKeyCode(53,["five","5"]),e.bindKeyCode(54,["six","6"]),e.bindKeyCode(55,["seven","7"]),e.bindKeyCode(56,["eight","8"]),e.bindKeyCode(57,["nine","9"]),e.bindKeyCode(96,["numzero","num0"]),e.bindKeyCode(97,["numone","num1"]),e.bindKeyCode(98,["numtwo","num2"]),e.bindKeyCode(99,["numthree","num3"]),e.bindKeyCode(100,["numfour","num4"]),e.bindKeyCode(101,["numfive","num5"]),e.bindKeyCode(102,["numsix","num6"]),e.bindKeyCode(103,["numseven","num7"]),e.bindKeyCode(104,["numeight","num8"]),e.bindKeyCode(105,["numnine","num9"]),e.bindKeyCode(106,["nummultiply","num*"]),e.bindKeyCode(107,["numadd","num+"]),e.bindKeyCode(108,["numenter"]),e.bindKeyCode(109,["numsubtract","num-"]),e.bindKeyCode(110,["numdecimal","num."]),e.bindKeyCode(111,["numdivide","num/"]),e.bindKeyCode(144,["numlock","num"]),e.bindKeyCode(112,["f1"]),e.bindKeyCode(113,["f2"]),e.bindKeyCode(114,["f3"]),e.bindKeyCode(115,["f4"]),e.bindKeyCode(116,["f5"]),e.bindKeyCode(117,["f6"]),e.bindKeyCode(118,["f7"]),e.bindKeyCode(119,["f8"]),e.bindKeyCode(120,["f9"]),e.bindKeyCode(121,["f10"]),e.bindKeyCode(122,["f11"]),e.bindKeyCode(123,["f12"]),e.bindMacro("shift + `",["tilde","~"]),e.bindMacro("shift + 1",["exclamation","exclamationpoint","!"]),e.bindMacro("shift + 2",["at","@"]),e.bindMacro("shift + 3",["number","#"]),e.bindMacro("shift + 4",["dollar","dollars","dollarsign","$"]),e.bindMacro("shift + 5",["percent","%"]),e.bindMacro("shift + 6",["caret","^"]),e.bindMacro("shift + 7",["ampersand","and","&"]),e.bindMacro("shift + 8",["asterisk","*"]),e.bindMacro("shift + 9",["openparen","("]),e.bindMacro("shift + 0",["closeparen",")"]),e.bindMacro("shift + -",["underscore","_"]),e.bindMacro("shift + =",["plus","+"]),e.bindMacro("shift + [",["opencurlybrace","opencurlybracket","{"]),e.bindMacro("shift + ]",["closecurlybrace","closecurlybracket","}"]),e.bindMacro("shift + \\",["verticalbar","|"]),e.bindMacro("shift + ;",["colon",":"]),e.bindMacro("shift + '",["quotationmark","'"]),e.bindMacro("shift + !,",["openanglebracket","<"]),e.bindMacro("shift + .",["closeanglebracket",">"]),e.bindMacro("shift + /",["questionmark","?"]);for(var i=65;90>=i;i+=1){var r=String.fromCharCode(i+32),o=String.fromCharCode(i);e.bindKeyCode(i,r),e.bindMacro("shift + "+r,o),e.bindMacro("capslock + "+r,o)}var s,a,l=n.match("Firefox")?59:186,c=n.match("Firefox")?173:189;t.match("Mac")&&(n.match("Safari")||n.match("Chrome"))?(s=91,a=93):t.match("Mac")&&n.match("Opera")?(s=17,a=17):t.match("Mac")&&n.match("Firefox")&&(s=224,a=224),e.bindKeyCode(l,["semicolon",";"]),e.bindKeyCode(c,["dash","-"]),e.bindKeyCode(s,["command","windows","win","super","leftcommand","leftwindows","leftwin","leftsuper"]),e.bindKeyCode(a,["command","windows","win","super","rightcommand","rightwindows","rightwin","rightsuper"]),e.setKillKey("command")}},function(e,t,n){"use strict";function i(e){return e&&e.__esModule?e:{"default":e}}function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(){return d||(d=new c),d}Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(t,n,i){return n&&e(t.prototype,n),i&&e(t,i),t}}(),a=n(12),l=i(a),c=function(){function e(){r(this,e),this.boundKeys={},this.id=Math.random().toString(36).substring(7)}return s(e,[{key:"setupKey",value:function(e,t){var n=this;this.boundKeys[e]||!function(){var i=$(t);i.children(".keys")[0]||i.append('<div class="keys"></div>');var r=i.children(".keys"),o=$.parseHTML((0,l["default"])(e));r.append(o),n.keyboard.bind(e,function(t){t.preventDefault(),n[e]=!0,$(o).addClass("pressed")},function(){n[e]=!1,$(o).removeClass("pressed")}),n.boundKeys[e]=!0}()}},{key:"init",value:function(e){this.keyboard=e}}]),e}(),d=void 0;t["default"]={controls:o()},e.exports=t["default"]},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=function(e){return"left"===e||"right"===e||"up"===e||"down"===e?'<div class="key"><div class="arrow-'+e+' keycap"><span>&#10140;</span></div></div>':'<div class="key"><div class="keycap">'+e.toUpperCase()+"</div></div>"},e.exports=t["default"]},function(e,t,n){"use strict";function i(e){return e&&e.__esModule?e:{"default":e}}function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(t,n,i){return n&&e(t.prototype,n),i&&e(t,i),t}}(),a=function(e,t,n){for(var i=!0;i;){var r=e,o=t,s=n;i=!1,null===r&&(r=Function.prototype);var a=Object.getOwnPropertyDescriptor(r,o);if(void 0!==a){if("value"in a)return a.value;var l=a.get;if(void 0===l)return;return l.call(s)}var c=Object.getPrototypeOf(r);if(null===c)return;e=c,t=o,n=s,i=!0,a=c=void 0}},l=n(14),c=i(l),d=n(11),u=n(15),h=i(u),p=n(16),f=i(p),y="dodge-falling",b=4,g=[0,0,300,300],v=function(e){function t(e,n){r(this,t),n=n||y,a(Object.getPrototypeOf(t.prototype),"constructor",this).call(this,e,y),this.key1=e[0],this.key2=e[1],this.setupStage()}return o(t,e),s(t,[{key:"setupStage",value:function(){var e=new f["default"](this.stage,{aabb:g,width:60,height:60,x:200});this.box=e,e.graphics.beginFill("#911").drawRect(0,0,e.shape.width,e.shape.height),e.reset=function(){e.moveTo(Math.random()*(g[2]-e.shape.width),0),e.dy=0};var t=new f["default"](this.stage,{aabb:g,width:30,height:60,x:150,y:g[3]-60,isBounded:!0});this.player=t,t.graphics.beginFill("#369").drawRect(0,0,t.shape.width,t.shape.height)}},{key:"tick",value:function(e){var n=this.box,i=this.player;(0,h["default"])(n,i)&&(document.dispatchEvent(new Event("lose")),i.moveTo(0),n.reset()),d.controls[this.key1]?i.moveBy(-e.delta/10*b):d.controls[this.key2]&&i.moveBy(e.delta/10*b),n.dy+=.2,n.move(e.delta),n.shape.y>=n.aabb[3]&&n.reset(),a(Object.getPrototypeOf(t.prototype),"tick",this).call(this)}}]),t}(c["default"]);t["default"]=v,e.exports=t["default"]},function(e,t,n){"use strict";function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(t,n,i){return n&&e(t.prototype,n),i&&e(t,i),t}}(),o=n(11),s=function(){function e(t,n){var r=this;i(this,e),this.id=n||Math.random().toString(36).substring(7),this.tick=this.tick.bind(this),this.initStage(),t.forEach(function(e){return o.controls.setupKey(e,r.$container)})}return r(e,[{key:"initStage",value:function(){var e=$("<canvas id="+this.id+" width=300 height=300></canvas>"),t=$('<div class="game-container"></div>').append(e);$("body").append(t),this.$canvas=e,this.$container=t,this.stage=new createjs.Stage(e[0])}},{key:"destroy",value:function(){this.stage.removeAllChildren(),this.stage.update(),this.$container.remove()}},{key:"tick",value:function(){createjs.Ticker.getPaused()||this.stage.update()}}]),e}();t["default"]=s,e.exports=t["default"]},function(e,t){"use strict";function n(e,t){return e=e&&e.shape||e||{},t=t&&t.shape||t||{},!(e.x>=t.x+t.width||e.x+e.width<=t.x||e.y>=t.y+t.height||e.y+e.height<=t.y)}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=n,e.exports=t["default"]},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var i=function(){function e(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(t,n,i){return n&&e(t.prototype,n),i&&e(t,i),t}}(),r=function(){function e(t,i){n(this,e),this.shape=new createjs.Shape,this.shape.width=i.width||i.size,this.shape.height=i.height||i.size,i.x&&(this.shape.x=i.x),i.y&&(this.shape.y=i.y),this.dx=i.dx||0,this.dy=i.dy||0,this.aabb=i.aabb,this.graphics=this.shape.graphics,this.isBounded=i.isBounded,t.addChild(this.shape)}return i(e,[{key:"moveTo",value:function(e,t){!isNaN(parseFloat(e))&&isFinite(e)&&(this.shape.x=e),!isNaN(parseFloat(t))&&isFinite(t)&&(this.shape.y=t)}},{key:"moveBy",value:function(e,t){e&&(this.shape.x+=e,this.isBounded&&(this.shape.x<this.aabb[0]?this.shape.x=this.aabb[0]:this.shape.x+this.shape.width>this.aabb[2]&&(this.shape.x=this.aabb[2]-this.shape.width))),t&&(this.shape.y+=t,this.isBounded&&(this.shape.y<this.aabb[1]?this.shape.x=this.aabb[1]:this.shape.y+this.shape.height>this.aabb[3]&&(this.shape.y=this.aabb[3]-this.shape.height)))}},{key:"move",value:function(e){e=e||16,this.moveBy(this.dx*e/100,this.dy*e/100)}},{key:"isOnBoundary",value:function(){return this.shape.x<=this.aabb[0]||this.shape.x>=this.aabb[2]||this.shape.y<=this.aabb[1]||this.shape.y>=this.aabb[3]}}]),e}();t["default"]=r,e.exports=t["default"]},function(e,t,n){"use strict";function i(e){return e&&e.__esModule?e:{"default":e}}function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(t,n,i){return n&&e(t.prototype,n),i&&e(t,i),t}}(),a=function(e,t,n){for(var i=!0;i;){var r=e,o=t,s=n;i=!1,null===r&&(r=Function.prototype);var a=Object.getOwnPropertyDescriptor(r,o);if(void 0!==a){if("value"in a)return a.value;var l=a.get;if(void 0===l)return;return l.call(s)}var c=Object.getPrototypeOf(r);if(null===c)return;e=c,t=o,n=s,i=!0,a=c=void 0}},l=n(14),c=i(l),d=n(11),u=n(15),h=i(u),p=n(16),f=i(p),y="stay-between",b=1,g=[0,0,300,300],v=5,m=g[3]/4,k=function(e){function t(e,n){r(this,t),n=n||y,a(Object.getPrototypeOf(t.prototype),"constructor",this).call(this,e,y),this.key1=e[0],this.key2=e[1],this.setupStage()}return o(t,e),s(t,[{key:"setupStage",value:function(){this.objects=[];var e=new f["default"](this.stage,{aabb:g,width:g[2],height:v,y:(g[3]-v)/2});this.player=e,e.graphics.beginFill("#369").drawRect(0,0,e.shape.width,e.shape.height),this.objects.push(e),this.lines=[];var t=new f["default"](this.stage,{aabb:g,width:g[2],height:10,y:this.player.shape.y-m,dy:-2});this.lines.push(t),t.graphics.beginFill("#911").drawRect(0,0,t.shape.width,t.shape.height),this.objects.push(t);var n=new f["default"](this.stage,{aabb:g,width:g[2],height:10,y:this.player.shape.y+m,dy:-2});this.lines.push(n),n.graphics.beginFill("#911").drawRect(0,0,t.shape.width,t.shape.height),this.objects.push(n)}},{key:"tick",value:function(e){var n=this.player;this.lines.forEach(function(e){(0,h["default"])(e,n)&&(document.dispatchEvent(new Event("lose")),n.dy=0,n.moveTo(0,g[3]/2))}),d.controls[this.key1]?n.dy-=b:d.controls[this.key2]&&(n.dy+=b),n.dy*=.98,Math.abs(n.dy)<.001&&(n.dy=0),this.objects.forEach(function(t){t.shape.y<0?t.moveTo(0,g[3]):t.shape.y>g[3]-t.shape.height&&(t.shape.y=g[3]-t.shape.height,t.dy>0&&(t.dy=0)),t.move(e.delta)}),a(Object.getPrototypeOf(t.prototype),"tick",this).call(this)}}]),t}(c["default"]);t["default"]=k,e.exports=t["default"]},function(e,t,n){"use strict";function i(e){return e&&e.__esModule?e:{"default":e}}function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(t,n,i){return n&&e(t.prototype,n),i&&e(t,i),t}}(),a=function(e,t,n){for(var i=!0;i;){var r=e,o=t,s=n;i=!1,null===r&&(r=Function.prototype);var a=Object.getOwnPropertyDescriptor(r,o);if(void 0!==a){if("value"in a)return a.value;var l=a.get;if(void 0===l)return;return l.call(s)}var c=Object.getPrototypeOf(r);if(null===c)return;e=c,t=o,n=s,i=!0,a=c=void 0}},l=n(14),c=i(l),d=n(11),u=n(15),h=(i(u),n(16)),p=i(h),f="dodge-falling",y=[0,0,300,300],b=25,g=function(e){function t(e,n){r(this,t),n=n||f,a(Object.getPrototypeOf(t.prototype),"constructor",this).call(this,e,f),this.key=e[0],this.setupStage()}return o(t,e),s(t,[{key:"setupStage",value:function(){var e=new p["default"](this.stage,{aabb:y,width:b,height:b,y:y[3]/2,x:-300,dx:10});this.ball=e,e.graphics.beginFill("#393").drawCircle(0,0,e.shape.width);var t=new createjs.Container;t.x=y[2]/2,t.y=y[3]/2,t.readyToFire=!0,t.charge=1,this.target=t;var n=new createjs.Shape;t.ring=n,t.r=n.r=y[2]/25,n.graphics.setStrokeStyle(3),n.drawArc=function(e){n.graphics.clear(),n.graphics.setStrokeStyle(3).beginStroke("#369").arc(0,0,n.r,-.5*Math.PI,2*(e-.25)*Math.PI)},n.drawArc(1),t.updateCharge=function(e){t.charge+=e/1500,t.charge<1?(n.alpha=t.charge,n.drawArc(t.charge)):(n.drawArc(1),t.readyToFire=!0)},t.addChild(n),this.stage.addChild(t),this.stage.update()}},{key:"tick",value:function(e){var n=this.target,i=this.ball;d.controls[this.key]&&n.readyToFire&&(n.ring.graphics.beginFill("#69b").drawCircle(0,0,n.r),
-n.readyToFire=!1,n.charge=0,i.shape.x-i.shape.width<n.x+n.r&&i.shape.x+i.shape.width>n.x-n.r&&createjs.Tween.get(i.shape).to({alpha:0,y:i.shape.y-50},500,createjs.Ease.quadOut).call(function(){i.moveTo(-2*Math.random()*y[3],y[3]/2),i.shape.alpha=1})),n.readyToFire===!1&&n.updateCharge(e.delta),this.ball.move(),i.shape.x+i.shape.width>y[3]&&(document.dispatchEvent(new Event("lose")),i.moveTo(-2*Math.random()*y[3],y[3]/2)),a(Object.getPrototypeOf(t.prototype),"tick",this).call(this)}}]),t}(c["default"]);t["default"]=g,e.exports=t["default"]}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(1);
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	__webpack_require__(2);
+
+	var _keyboardjs = __webpack_require__(6);
+
+	var _keyboardjs2 = _interopRequireDefault(_keyboardjs);
+
+	var _controls = __webpack_require__(11);
+
+	var _gamesTwoDodgeFalling = __webpack_require__(13);
+
+	var _gamesTwoDodgeFalling2 = _interopRequireDefault(_gamesTwoDodgeFalling);
+
+	var _gamesTwoStayBetween = __webpack_require__(17);
+
+	var _gamesTwoStayBetween2 = _interopRequireDefault(_gamesTwoStayBetween);
+
+	var _gamesOneSnapshot = __webpack_require__(18);
+
+	var _gamesOneSnapshot2 = _interopRequireDefault(_gamesOneSnapshot);
+
+	(function () {
+	  alert('hi');
+	  createjs.Ticker.setFPS(60);
+	  _controls.controls.init(_keyboardjs2['default']);
+	  createjs.Ticker.addEventListener('tick', tick);
+	  var games = [];
+	  var gameSpawns = [];
+	  document.addEventListener('lose', onLoss);
+
+	  startGames();
+
+	  _keyboardjs2['default'].bind('g', startGames);
+	  function startGames() {
+	    createjs.Ticker.setPaused(false);
+	    games.forEach(function (game) {
+	      return game.destroy();
+	    });
+	    games = [];
+	    var game = new _gamesTwoDodgeFalling2['default'](['left', 'right']);
+	    games.push(game);
+
+	    var game1spawn = setTimeout(function () {
+	      var game3 = new _gamesOneSnapshot2['default'](['space']);
+	      games.push(game3);
+	    }, 10000);
+	    gameSpawns.push(game1spawn);
+
+	    var game2spawn = setTimeout(function () {
+	      var game2 = new _gamesTwoStayBetween2['default'](['up', 'down']);
+	      games.push(game2);
+	    }, 20000);
+	    gameSpawns.push(game2spawn);
+	  }
+
+	  function onLoss() {
+	    console.log('You lose');
+	    alert('You lost, press G to restart');
+	    createjs.Ticker.setPaused(true);
+	    gameSpawns.forEach(function (spawn) {
+	      return clearTimeout(spawn);
+	    });
+	  }
+
+	  function tick(event) {
+	    if (createjs.Ticker.getPaused()) return;
+	    games.forEach(function (game) {
+	      return game.tick(event);
+	    });
+	  }
+	})();
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(3);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(5)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/stylus-loader/index.js!./style.styl", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/stylus-loader/index.js!./style.styl");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(4)();
+	exports.push([module.id, "body {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border: 1px solid #ffd700;\n  height: 600px;\n  width: 900px;\n  display: flex;\n  color: #555;\n  font-family: 'Average Sans', sans-serif;\n  background-color: #1e1d1f;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\ncanvas {\n  background-color: #222;\n}\n.key {\n  opacity: 0.3;\n  background: #d3cfcc;\n  border-color: #ece8e4 #dedad6 #c9c4c4;\n  width: 40px;\n  height: 45px;\n  margin: 2px;\n  border-width: 3px 7px 10px;\n  border-style: solid;\n  border-radius: 4px;\n  float: left;\n  animation: keyIn 1s;\n}\n.key.pressed {\n  opacity: 0.6;\n  -webkit-transform: scale(0.95, 0.95);\n  -moz-transform: scale(0.95, 0.95);\n  -ms-transform: scale(0.95, 0.95);\n  -o-transform: scale(0.95, 0.95);\n  transform: scale(0.95, 0.95);\n}\n.game-container {\n  display: flex;\n  position: relative;\n  animation: fadeIn 1s;\n}\n.keys {\n  position: absolute;\n  top: 5px;\n  left: 5px;\n  animation: keysIn 1s;\n}\n.keycap {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0;\n  height: 45px;\n  font-size: 18px;\n  line-height: 1;\n  background: #f5f3f1;\n  background: -webkit-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);\n  background: -moz-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);\n  background: -ms-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);\n  background: -o-linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);\n  background: linear-gradient(left, #e5e2e1, #f5f3f1, #e5e2e1);\n  box-shadow: 0 0 10px rgba(0,0,0,0.15);\n  border-radius: 4px;\n  position: relative;\n}\n.arrow-down span {\n  transform: rotate(90deg);\n}\n.arrow-left span {\n  transform: rotate(180deg);\n}\n.arrow-up span {\n  transform: rotate(270deg);\n}\n@-moz-keyframes keyIn {\n  0% {\n    oapcity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.3;\n  }\n}\n@-webkit-keyframes keyIn {\n  0% {\n    oapcity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.3;\n  }\n}\n@-o-keyframes keyIn {\n  0% {\n    oapcity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.3;\n  }\n}\n@keyframes keyIn {\n  0% {\n    oapcity: 0;\n  }\n  50% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0.3;\n  }\n}\n@-moz-keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@-webkit-keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@-o-keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes fadeIn {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@-moz-keyframes keysIn {\n  0% {\n    opacity: 0;\n    transform: translate(90px, 90px);\n  }\n  50% {\n    opacity: 1;\n    transform: scale(1.2) translate(70px, 70px);\n  }\n}\n@-webkit-keyframes keysIn {\n  0% {\n    opacity: 0;\n    transform: translate(90px, 90px);\n  }\n  50% {\n    opacity: 1;\n    transform: scale(1.2) translate(70px, 70px);\n  }\n}\n@-o-keyframes keysIn {\n  0% {\n    opacity: 0;\n    transform: translate(90px, 90px);\n  }\n  50% {\n    opacity: 1;\n    transform: scale(1.2) translate(70px, 70px);\n  }\n}\n@keyframes keysIn {\n  0% {\n    opacity: 0;\n    transform: translate(90px, 90px);\n  }\n  50% {\n    opacity: 1;\n    transform: scale(1.2) translate(70px, 70px);\n  }\n}\n", ""]);
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0;
+
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+
+	function createStyleElement() {
+		var styleElement = document.createElement("style");
+		var head = getHeadElement();
+		styleElement.type = "text/css";
+		head.appendChild(styleElement);
+		return styleElement;
+	}
+
+	function createLinkElement() {
+		var linkElement = document.createElement("link");
+		var head = getHeadElement();
+		linkElement.rel = "stylesheet";
+		head.appendChild(linkElement);
+		return linkElement;
+	}
+
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement());
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else if(obj.sourceMap &&
+			typeof URL === "function" &&
+			typeof URL.createObjectURL === "function" &&
+			typeof URL.revokeObjectURL === "function" &&
+			typeof Blob === "function" &&
+			typeof btoa === "function") {
+			styleElement = createLinkElement();
+			update = updateLink.bind(null, styleElement);
+			remove = function() {
+				styleElement.parentNode.removeChild(styleElement);
+				if(styleElement.href)
+					URL.revokeObjectURL(styleElement.href);
+			};
+		} else {
+			styleElement = createStyleElement();
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				styleElement.parentNode.removeChild(styleElement);
+			};
+		}
+
+		update(obj);
+
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+
+	var replaceText = (function () {
+		var textStore = [];
+
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+		var sourceMap = obj.sourceMap;
+
+		if(media) {
+			styleElement.setAttribute("media", media)
+		}
+
+		if(styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+	function updateLink(linkElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+		var sourceMap = obj.sourceMap;
+
+		if(sourceMap) {
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+
+		var blob = new Blob([css], { type: "text/css" });
+
+		var oldSrc = linkElement.href;
+
+		linkElement.href = URL.createObjectURL(blob);
+
+		if(oldSrc)
+			URL.revokeObjectURL(oldSrc);
+	}
+
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	var Keyboard = __webpack_require__(7);
+	var Locale   = __webpack_require__(8);
+	var KeyCombo = __webpack_require__(9);
+
+	var keyboard = new Keyboard();
+
+	keyboard.setLocale('us', __webpack_require__(10));
+
+	exports          = module.exports = keyboard;
+	exports.Keyboard = Keyboard;
+	exports.Locale   = Locale;
+	exports.KeyCombo = KeyCombo;
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {
+	var Locale = __webpack_require__(8);
+	var KeyCombo = __webpack_require__(9);
+
+
+	function Keyboard(targetWindow, targetElement, platform, userAgent) {
+	  this._locale               = null;
+	  this._currentContext       = null;
+	  this._contexts             = {};
+	  this._listeners            = [];
+	  this._appliedListeners     = [];
+	  this._locales              = {};
+	  this._targetElement        = null;
+	  this._targetWindow         = null;
+	  this._targetPlatform       = '';
+	  this._targetUserAgent      = '';
+	  this._isModernBrowser      = false;
+	  this._targetKeyDownBinding = null;
+	  this._targetKeyUpBinding   = null;
+	  this._targetResetBinding   = null;
+	  this._paused               = false;
+
+	  this.setContext('global');
+	  this.watch(targetWindow, targetElement, platform, userAgent);
+	}
+
+	Keyboard.prototype.setLocale = function(localeName, localeBuilder) {
+	  var locale = null;
+	  if (typeof localeName === 'string') {
+
+	    if (localeBuilder) {
+	      locale = new Locale(localeName);
+	      localeBuilder(locale, this._targetPlatform, this._targetUserAgent);
+	    } else {
+	      locale = this._locales[localeName] || null;
+	    }
+	  } else {
+	    locale     = localeName;
+	    localeName = locale._localeName;
+	  }
+
+	  this._locale              = locale;
+	  this._locales[localeName] = locale;
+	  if (locale) {
+	    this._locale.pressedKeys = locale.pressedKeys;
+	  }
+	};
+
+	Keyboard.prototype.getLocale = function(localName) {
+	  localName || (localName = this._locale.localeName);
+	  return this._locales[localName] || null;
+	};
+
+	Keyboard.prototype.bind = function(keyComboStr, pressHandler, releaseHandler, preventRepeatByDefault) {
+	  if (keyComboStr === null || typeof keyComboStr === 'function') {
+	    preventRepeatByDefault = releaseHandler;
+	    releaseHandler         = pressHandler;
+	    pressHandler           = keyComboStr;
+	    keyComboStr            = null;
+	  }
+
+	  if (
+	    keyComboStr &&
+	    typeof keyComboStr === 'object' &&
+	    typeof keyComboStr.length === 'number'
+	  ) {
+	    for (var i = 0; i < keyComboStr.length; i += 1) {
+	      this.bind(keyComboStr[i], pressHandler, releaseHandler);
+	    }
+	    return;
+	  }
+
+	  this._listeners.push({
+	    keyCombo               : keyComboStr ? new KeyCombo(keyComboStr) : null,
+	    pressHandler           : pressHandler           || null,
+	    releaseHandler         : releaseHandler         || null,
+	    preventRepeat          : preventRepeatByDefault || false,
+	    preventRepeatByDefault : preventRepeatByDefault || false
+	  });
+	};
+	Keyboard.prototype.addListener = Keyboard.prototype.bind;
+	Keyboard.prototype.on          = Keyboard.prototype.bind;
+
+	Keyboard.prototype.unbind = function(keyComboStr, pressHandler, releaseHandler) {
+	  if (keyComboStr === null || typeof keyComboStr === 'function') {
+	    releaseHandler = pressHandler;
+	    pressHandler   = keyComboStr;
+	    keyComboStr = null;
+	  }
+
+	  if (
+	    keyComboStr &&
+	    typeof keyComboStr === 'object' &&
+	    typeof keyComboStr.length === 'number'
+	  ) {
+	    for (var i = 0; i < keyComboStr.length; i += 1) {
+	      this.unbind(keyComboStr[i], pressHandler, releaseHandler);
+	    }
+	    return;
+	  }
+
+	  for (var i = 0; i < this._listeners.length; i += 1) {
+	    var listener = this._listeners[i];
+
+	    var comboMatches          = !keyComboStr && !listener.keyCombo ||
+	                                listener.keyCombo.isEqual(keyComboStr);
+	    var pressHandlerMatches   = !pressHandler && !releaseHandler ||
+	                                !pressHandler && !listener.pressHandler ||
+	                                pressHandler === listener.pressHandler;
+	    var releaseHandlerMatches = !pressHandler && !releaseHandler ||
+	                                !releaseHandler && !listener.releaseHandler ||
+	                                releaseHandler === listener.releaseHandler;
+
+	    if (comboMatches && pressHandlerMatches && releaseHandlerMatches) {
+	      this._listeners.splice(i, 1);
+	      i -= 1;
+	    }
+	  }
+	};
+	Keyboard.prototype.removeListener = Keyboard.prototype.unbind;
+	Keyboard.prototype.off            = Keyboard.prototype.unbind;
+
+	Keyboard.prototype.setContext = function(contextName) {
+	  if(this._locale) { this.releaseAllKeys(); }
+
+	  if (!this._contexts[contextName]) {
+	    this._contexts[contextName] = [];
+	  }
+	  this._listeners      = this._contexts[contextName];
+	  this._currentContext = contextName;
+	};
+
+	Keyboard.prototype.getContext = function() {
+	  return this._currentContext;
+	};
+
+	Keyboard.prototype.withContext = function(contextName, callback) {
+	  var previousContextName = this.getContext();
+	  this.setContext(contextName);
+
+	  callback();
+
+	  this.setContext(previousContextName);
+	};
+
+	Keyboard.prototype.watch = function(targetWindow, targetElement, targetPlatform, targetUserAgent) {
+	  var _this = this;
+
+	  this.stop();
+
+	  targetWindow && targetWindow !== null || (targetWindow = global);
+
+	  if (typeof targetWindow.nodeType === 'number') {
+	    targetUserAgent = targetPlatform;
+	    targetPlatform  = targetElement;
+	    targetElement   = targetWindow;
+	    targetWindow    = global;
+	  }
+
+	  var userAgent = targetWindow.navigator && targetWindow.navigator.userAgent || '';
+	  var platform  = targetWindow.navigator && targetWindow.navigator.platform  || '';
+
+	  targetElement   && targetElement   !== null || (targetElement   = targetWindow.document);
+	  targetPlatform  && targetPlatform  !== null || (targetPlatform  = platform);
+	  targetUserAgent && targetUserAgent !== null || (targetUserAgent = userAgent);
+
+	  this._isModernBrowser = !!targetWindow.addEventListener;
+	  this._targetKeyDownBinding = function(event) {
+	    _this.pressKey(event.keyCode, event);
+	  };
+	  this._targetKeyUpBinding = function(event) {
+	    _this.releaseKey(event.keyCode, event);
+	  };
+	  this._targetResetBinding = function(event) {
+	    _this.releaseAllKeys(event)
+	  };
+
+	  this._bindEvent(targetElement, 'keydown', this._targetKeyDownBinding);
+	  this._bindEvent(targetElement, 'keyup',   this._targetKeyUpBinding);
+	  this._bindEvent(targetWindow,  'focus',   this._targetResetBinding);
+	  this._bindEvent(targetWindow,  'blur',    this._targetResetBinding);
+
+	  this._targetElement   = targetElement;
+	  this._targetWindow    = targetWindow;
+	  this._targetPlatform  = targetPlatform;
+	  this._targetUserAgent = targetUserAgent;
+	};
+
+	Keyboard.prototype.stop = function() {
+	  var _this = this;
+
+	  if (!this._targetElement || !this._targetWindow) { return; }
+
+	  this._unbindEvent(this._targetElement, 'keydown', this._targetKeyDownBinding);
+	  this._unbindEvent(this._targetElement, 'keyup',   this._targetKeyUpBinding);
+	  this._unbindEvent(this._targetWindow,  'focus',   this._targetResetBinding);
+	  this._unbindEvent(this._targetWindow,  'blur',    this._targetResetBinding);
+
+	  this._targetWindow  = null;
+	  this._targetElement = null;
+	};
+
+	Keyboard.prototype.pressKey = function(keyCode, event) {
+	  if (this._paused) { return; }
+	  if (!this._locale) { throw new Error('Locale not set'); }
+
+	  this._locale.pressKey(keyCode);
+	  this._applyBindings(event);
+	};
+
+	Keyboard.prototype.releaseKey = function(keyCode, event) {
+	  if (this._paused) { return; }
+	  if (!this._locale) { throw new Error('Locale not set'); }
+
+	  this._locale.releaseKey(keyCode);
+	  this._clearBindings(event);
+	};
+
+	Keyboard.prototype.releaseAllKeys = function(event) {
+	  if (this._paused) { return; }
+	  if (!this._locale) { throw new Error('Locale not set'); }
+
+	  this._locale.pressedKeys.length = 0;
+	  this._clearBindings(event);
+	};
+
+	Keyboard.prototype.pause = function() {
+	  if (this._paused) { return; }
+	  if (this._locale) { this.releaseAllKeys(); }
+	  this._paused = true;
+	};
+
+	Keyboard.prototype.resume = function() {
+	  this._paused = false;
+	};
+
+	Keyboard.prototype.reset = function() {
+	  this.releaseAllKeys();
+	  this._listeners.length = 0;
+	};
+
+	Keyboard.prototype._bindEvent = function(targetElement, eventName, handler) {
+	  return this._isModernBrowser ?
+	    targetElement.addEventListener(eventName, handler, false) :
+	    targetElement.attachEvent('on' + eventName, handler);
+	};
+
+	Keyboard.prototype._unbindEvent = function(targetElement, eventName, handler) {
+	  return this._isModernBrowser ?
+	    targetElement.removeEventListener(eventName, handler, false) :
+	    targetElement.detachEvent('on' + eventName, handler);
+	};
+
+	Keyboard.prototype._getGroupedListeners = function() {
+	  var listenerGroups   = [];
+	  var listenerGroupMap = [];
+
+	  var listeners = this._listeners;
+	  if (this._currentContext !== 'global') {
+	    listeners = [].concat(listeners, this._contexts.global);
+	  }
+
+	  listeners.sort(function(a, b) {
+	    return a.keyCombo.keyNames.length < b.keyCombo.keyNames.length;
+	  }).forEach(function(l) {
+	    var mapIndex = -1;
+	    for (var i = 0; i < listenerGroupMap.length; i += 1) {
+	      if (listenerGroupMap[i].isEqual(l.keyCombo)) {
+	        mapIndex = i;
+	      }
+	    }
+	    if (mapIndex === -1) {
+	      mapIndex = listenerGroupMap.length;
+	      listenerGroupMap.push(l.keyCombo);
+	    }
+	    if (!listenerGroups[mapIndex]) {
+	      listenerGroups[mapIndex] = [];
+	    }
+	    listenerGroups[mapIndex].push(l);
+	  });
+	  return listenerGroups;
+	};
+
+	Keyboard.prototype._applyBindings = function(event) {
+	  var preventRepeat = false;
+
+	  event || (event = {});
+	  event.preventRepeat = function() { preventRepeat = true; };
+	  event.pressedKeys   = this._locale.pressedKeys.slice(0);
+
+	  var pressedKeys    = this._locale.pressedKeys.slice(0);
+	  var listenerGroups = this._getGroupedListeners();
+
+
+	  for (var i = 0; i < listenerGroups.length; i += 1) {
+	    var listeners = listenerGroups[i];
+	    var keyCombo  = listeners[0].keyCombo;
+
+	    if (keyCombo === null || keyCombo.check(pressedKeys)) {
+	      for (var j = 0; j < listeners.length; j += 1) {
+	        var listener = listeners[j];
+
+	        if (keyCombo === null) {
+	          listener = {
+	            keyCombo               : new KeyCombo(pressedKeys.join('+')),
+	            pressHandler           : listener.pressHandler,
+	            releaseHandler         : listener.releaseHandler,
+	            preventRepeat          : listener.preventRepeat,
+	            preventRepeatByDefault : listener.preventRepeatByDefault
+	          };
+	        }
+
+	        if (listener.pressHandler && !listener.preventRepeat) {
+	          listener.pressHandler.call(this, event);
+	          if (preventRepeat) {
+	            listener.preventRepeat = preventRepeat;
+	            preventRepeat          = false;
+	          }
+	        }
+
+	        if (listener.releaseHandler && this._appliedListeners.indexOf(listener) === -1) {
+	          this._appliedListeners.push(listener);
+	        }
+	      }
+
+	      if (keyCombo) {
+	        for (var j = 0; j < keyCombo.keyNames.length; j += 1) {
+	          var index = pressedKeys.indexOf(keyCombo.keyNames[j]);
+	          if (index !== -1) {
+	            pressedKeys.splice(index, 1);
+	            j -= 1;
+	          }
+	        }
+	      }
+	    }
+	  }
+	};
+
+	Keyboard.prototype._clearBindings = function(event) {
+	  event || (event = {});
+
+	  for (var i = 0; i < this._appliedListeners.length; i += 1) {
+	    var listener = this._appliedListeners[i];
+	    var keyCombo = listener.keyCombo;
+	    if (keyCombo === null || !keyCombo.check(this._locale.pressedKeys)) {
+	      listener.preventRepeat = listener.preventRepeatByDefault;
+	      listener.releaseHandler.call(this, event);
+	      this._appliedListeners.splice(i, 1);
+	      i -= 1;
+	    }
+	  }
+	};
+
+	module.exports = Keyboard;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	var KeyCombo = __webpack_require__(9);
+
+
+	function Locale(name) {
+	  this.localeName     = name;
+	  this.pressedKeys    = [];
+	  this._appliedMacros = [];
+	  this._keyMap        = {};
+	  this._killKeyCodes  = [];
+	  this._macros        = [];
+	}
+
+	Locale.prototype.bindKeyCode = function(keyCode, keyNames) {
+	  if (typeof keyNames === 'string') {
+	    keyNames = [keyNames];
+	  }
+
+	  this._keyMap[keyCode] = keyNames;
+	};
+
+	Locale.prototype.bindMacro = function(keyComboStr, keyNames) {
+	  if (typeof keyNames === 'string') {
+	    keyNames = [ keyNames ];
+	  }
+
+	  var handler = null;
+	  if (typeof keyNames === 'function') {
+	    handler = keyNames;
+	    keyNames = null;
+	  }
+
+	  var macro = {
+	    keyCombo : new KeyCombo(keyComboStr),
+	    keyNames : keyNames,
+	    handler  : handler
+	  };
+
+	  this._macros.push(macro);
+	};
+
+	Locale.prototype.getKeyCodes = function(keyName) {
+	  var keyCodes = [];
+	  for (var keyCode in this._keyMap) {
+	    var index = this._keyMap[keyCode].indexOf(keyName);
+	    if (index > -1) { keyCodes.push(keyCode|0); }
+	  }
+	  return keyCodes;
+	};
+
+	Locale.prototype.getKeyNames = function(keyCode) {
+	  return this._keyMap[keyCode] || [];
+	};
+
+	Locale.prototype.setKillKey = function(keyCode) {
+	  if (typeof keyCode === 'string') {
+	    var keyCodes = this.getKeyCodes(keyCode);
+	    for (var i = 0; i < keyCodes.length; i += 1) {
+	      this.setKillKey(keyCodes[i]);
+	    }
+	    return;
+	  }
+
+	  this._killKeyCodes.push(keyCode);
+	};
+
+	Locale.prototype.pressKey = function(keyCode) {
+	  if (typeof keyCode === 'string') {
+	    var keyCodes = this.getKeyCodes(keyCode);
+	    for (var i = 0; i < keyCodes.length; i += 1) {
+	      this.pressKey(keyCodes[i]);
+	    }
+	    return;
+	  }
+
+	  var keyNames = this.getKeyNames(keyCode);
+	  for (var i = 0; i < keyNames.length; i += 1) {
+	    if (this.pressedKeys.indexOf(keyNames[i]) === -1) {
+	      this.pressedKeys.push(keyNames[i]);
+	    }
+	  }
+
+	  this._applyMacros();
+	};
+
+	Locale.prototype.releaseKey = function(keyCode) {
+	  if (typeof keyCode === 'string') {
+	    var keyCodes = this.getKeyCodes(keyCode);
+	    for (var i = 0; i < keyCodes.length; i += 1) {
+	      this.releaseKey(keyCodes[i]);
+	    }
+	  }
+
+	  else {
+	    var keyNames         = this.getKeyNames(keyCode);
+	    var killKeyCodeIndex = this._killKeyCodes.indexOf(keyCode);
+	    
+	    if (killKeyCodeIndex > -1) {
+	      this.pressedKeys.length = 0;
+	    } else {
+	      for (var i = 0; i < keyNames.length; i += 1) {
+	        var index = this.pressedKeys.indexOf(keyNames[i]);
+	        if (index > -1) {
+	          this.pressedKeys.splice(index, 1);
+	        }
+	      }
+	    }
+
+	    this._clearMacros();
+	  }
+	};
+
+	Locale.prototype._applyMacros = function() {
+	  var macros = this._macros.slice(0);
+	  for (var i = 0; i < macros.length; i += 1) {
+	    var macro = macros[i];
+	    if (macro.keyCombo.check(this.pressedKeys)) {
+	      if (macro.handler) {
+	        macro.keyNames = macro.handler(this.pressedKeys);
+	      }
+	      for (var j = 0; j < macro.keyNames.length; j += 1) {
+	        if (this.pressedKeys.indexOf(macro.keyNames[j]) === -1) {
+	          this.pressedKeys.push(macro.keyNames[j]);
+	        }
+	      }
+	      this._appliedMacros.push(macro);
+	    }
+	  }
+	};
+
+	Locale.prototype._clearMacros = function() {
+	  for (var i = 0; i < this._appliedMacros.length; i += 1) {
+	    var macro = this._appliedMacros[i];
+	    if (!macro.keyCombo.check(this.pressedKeys)) {
+	      for (var j = 0; j < macro.keyNames.length; j += 1) {
+	        var index = this.pressedKeys.indexOf(macro.keyNames[j]);
+	        if (index > -1) {
+	          this.pressedKeys.splice(index, 1);
+	        }
+	      }
+	      if (macro.handler) {
+	        macro.keyNames = null;
+	      }
+	      this._appliedMacros.splice(i, 1);
+	      i -= 1;
+	    }
+	  }
+	};
+
+
+	module.exports = Locale;
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	
+	function KeyCombo(keyComboStr) {
+	  this.sourceStr = keyComboStr;
+	  this.subCombos = KeyCombo.parseComboStr(keyComboStr);
+	  this.keyNames  = this.subCombos.reduce(function(memo, nextSubCombo) {
+	    return memo.concat(nextSubCombo);
+	  });
+	}
+
+	// TODO: Add support for key combo sequences
+	KeyCombo.sequenceDeliminator = '>>';
+	KeyCombo.comboDeliminator    = '>';
+	KeyCombo.keyDeliminator      = '+';
+
+	KeyCombo.parseComboStr = function(keyComboStr) {
+	  var subComboStrs = KeyCombo._splitStr(keyComboStr, KeyCombo.comboDeliminator);
+	  var combo        = [];
+
+	  for (var i = 0 ; i < subComboStrs.length; i += 1) {
+	    combo.push(KeyCombo._splitStr(subComboStrs[i], KeyCombo.keyDeliminator));
+	  }
+	  return combo;
+	};
+
+	KeyCombo.prototype.check = function(pressedKeyNames) {
+	  var startingKeyNameIndex = 0;
+	  for (var i = 0; i < this.subCombos.length; i += 1) {
+	    startingKeyNameIndex = this._checkSubCombo(
+	      this.subCombos[i],
+	      startingKeyNameIndex,
+	      pressedKeyNames
+	    );
+	    if (startingKeyNameIndex === -1) { return false; }
+	  }
+	  return true;
+	};
+
+	KeyCombo.prototype.isEqual = function(otherKeyCombo) {
+	  if (
+	    !otherKeyCombo ||
+	    typeof otherKeyCombo !== 'string' &&
+	    typeof otherKeyCombo !== 'object'
+	  ) { return false; }
+
+	  if (typeof otherKeyCombo === 'string') {
+	    otherKeyCombo = new KeyCombo(otherKeyCombo);
+	  }
+
+	  if (this.subCombos.length !== otherKeyCombo.subCombos.length) {
+	    return false;
+	  }
+	  for (var i = 0; i < this.subCombos.length; i += 1) {
+	    if (this.subCombos[i].length !== otherKeyCombo.subCombos[i].length) {
+	      return false;
+	    }
+	  }
+
+	  for (var i = 0; i < this.subCombos.length; i += 1) {
+	    var subCombo      = this.subCombos[i];
+	    var otherSubCombo = otherKeyCombo.subCombos[i].slice(0);
+
+	    for (var j = 0; j < subCombo.length; j += 1) {
+	      var keyName = subCombo[j];
+	      var index   = otherSubCombo.indexOf(keyName);
+
+	      if (index > -1) {
+	        otherSubCombo.splice(index, 1);
+	      }
+	    }
+	    if (otherSubCombo.length !== 0) {
+	      return false;
+	    }
+	  }
+
+	  return true;
+	};
+
+	KeyCombo._splitStr = function(str, deliminator) {
+	  var s  = str;
+	  var d  = deliminator;
+	  var c  = '';
+	  var ca = [];
+
+	  for (var ci = 0; ci < s.length; ci += 1) {
+	    if (ci > 0 && s[ci] === d && s[ci - 1] !== '\\') {
+	      ca.push(c.trim());
+	      c = '';
+	      ci += 1;
+	    }
+	    c += s[ci];
+	  }
+	  if (c) { ca.push(c.trim()); }
+
+	  return ca;
+	};
+
+	KeyCombo.prototype._checkSubCombo = function(subCombo, startingKeyNameIndex, pressedKeyNames) {
+	  subCombo = subCombo.slice(0);
+	  pressedKeyNames = pressedKeyNames.slice(startingKeyNameIndex);
+
+	  var endIndex = startingKeyNameIndex;
+	  for (var i = 0; i < subCombo.length; i += 1) {
+
+	    var keyName = subCombo[i];
+	    if (keyName[0] === '\\') {
+	      var escapedKeyName = keyName.slice(1);
+	      if (
+	        escapedKeyName === KeyCombo.comboDeliminator ||
+	        escapedKeyName === KeyCombo.keyDeliminator
+	      ) {
+	        keyName = escapedKeyName;
+	      }
+	    }
+
+	    var index = pressedKeyNames.indexOf(keyName);
+	    if (index > -1) {
+	      subCombo.splice(i, 1);
+	      i -= 1;
+	      if (index > endIndex) {
+	        endIndex = index;
+	      }
+	      if (subCombo.length === 0) {
+	        return endIndex;
+	      }
+	    }
+	  }
+	  return -1;
+	};
+
+
+	module.exports = KeyCombo;
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	
+	module.exports = function(locale, platform, userAgent) {
+
+	  // general
+	  locale.bindKeyCode(3,   ['cancel']);
+	  locale.bindKeyCode(8,   ['backspace']);
+	  locale.bindKeyCode(9,   ['tab']);
+	  locale.bindKeyCode(12,  ['clear']);
+	  locale.bindKeyCode(13,  ['enter']);
+	  locale.bindKeyCode(16,  ['shift']);
+	  locale.bindKeyCode(17,  ['ctrl']);
+	  locale.bindKeyCode(18,  ['alt', 'menu']);
+	  locale.bindKeyCode(19,  ['pause', 'break']);
+	  locale.bindKeyCode(20,  ['capslock']);
+	  locale.bindKeyCode(27,  ['escape', 'esc']);
+	  locale.bindKeyCode(32,  ['space', 'spacebar']);
+	  locale.bindKeyCode(33,  ['pageup']);
+	  locale.bindKeyCode(34,  ['pagedown']);
+	  locale.bindKeyCode(35,  ['end']);
+	  locale.bindKeyCode(36,  ['home']);
+	  locale.bindKeyCode(37,  ['left']);
+	  locale.bindKeyCode(38,  ['up']);
+	  locale.bindKeyCode(39,  ['right']);
+	  locale.bindKeyCode(40,  ['down']);
+	  locale.bindKeyCode(41,  ['select']);
+	  locale.bindKeyCode(42,  ['printscreen']);
+	  locale.bindKeyCode(43,  ['execute']);
+	  locale.bindKeyCode(44,  ['snapshot']);
+	  locale.bindKeyCode(45,  ['insert', 'ins']);
+	  locale.bindKeyCode(46,  ['delete', 'del']);
+	  locale.bindKeyCode(47,  ['help']);
+	  locale.bindKeyCode(145, ['scrolllock', 'scroll']);
+	  locale.bindKeyCode(187, ['equal', 'equalsign', '=']);
+	  locale.bindKeyCode(188, ['comma', ',']);
+	  locale.bindKeyCode(190, ['period', '.']);
+	  locale.bindKeyCode(191, ['slash', 'forwardslash', '/']);
+	  locale.bindKeyCode(192, ['graveaccent', '`']);
+	  locale.bindKeyCode(219, ['openbracket', '[']);
+	  locale.bindKeyCode(220, ['backslash', '\\']);
+	  locale.bindKeyCode(221, ['closebracket', ']']);
+	  locale.bindKeyCode(222, ['apostrophe', '\'']);
+
+	  // 0-9
+	  locale.bindKeyCode(48, ['zero', '0']);
+	  locale.bindKeyCode(49, ['one', '1']);
+	  locale.bindKeyCode(50, ['two', '2']);
+	  locale.bindKeyCode(51, ['three', '3']);
+	  locale.bindKeyCode(52, ['four', '4']);
+	  locale.bindKeyCode(53, ['five', '5']);
+	  locale.bindKeyCode(54, ['six', '6']);
+	  locale.bindKeyCode(55, ['seven', '7']);
+	  locale.bindKeyCode(56, ['eight', '8']);
+	  locale.bindKeyCode(57, ['nine', '9']);
+
+	  // numpad
+	  locale.bindKeyCode(96, ['numzero', 'num0']);
+	  locale.bindKeyCode(97, ['numone', 'num1']);
+	  locale.bindKeyCode(98, ['numtwo', 'num2']);
+	  locale.bindKeyCode(99, ['numthree', 'num3']);
+	  locale.bindKeyCode(100, ['numfour', 'num4']);
+	  locale.bindKeyCode(101, ['numfive', 'num5']);
+	  locale.bindKeyCode(102, ['numsix', 'num6']);
+	  locale.bindKeyCode(103, ['numseven', 'num7']);
+	  locale.bindKeyCode(104, ['numeight', 'num8']);
+	  locale.bindKeyCode(105, ['numnine', 'num9']);
+	  locale.bindKeyCode(106, ['nummultiply', 'num*']);
+	  locale.bindKeyCode(107, ['numadd', 'num+']);
+	  locale.bindKeyCode(108, ['numenter']);
+	  locale.bindKeyCode(109, ['numsubtract', 'num-']);
+	  locale.bindKeyCode(110, ['numdecimal', 'num.']);
+	  locale.bindKeyCode(111, ['numdivide', 'num/']);
+	  locale.bindKeyCode(144, ['numlock', 'num']);
+
+	  // function keys
+	  locale.bindKeyCode(112, ['f1']);
+	  locale.bindKeyCode(113, ['f2']);
+	  locale.bindKeyCode(114, ['f3']);
+	  locale.bindKeyCode(115, ['f4']);
+	  locale.bindKeyCode(116, ['f5']);
+	  locale.bindKeyCode(117, ['f6']);
+	  locale.bindKeyCode(118, ['f7']);
+	  locale.bindKeyCode(119, ['f8']);
+	  locale.bindKeyCode(120, ['f9']);
+	  locale.bindKeyCode(121, ['f10']);
+	  locale.bindKeyCode(122, ['f11']);
+	  locale.bindKeyCode(123, ['f12']);
+
+	  // secondary key symbols
+	  locale.bindMacro('shift + `', ['tilde', '~']);
+	  locale.bindMacro('shift + 1', ['exclamation', 'exclamationpoint', '!']);
+	  locale.bindMacro('shift + 2', ['at', '@']);
+	  locale.bindMacro('shift + 3', ['number', '#']);
+	  locale.bindMacro('shift + 4', ['dollar', 'dollars', 'dollarsign', '$']);
+	  locale.bindMacro('shift + 5', ['percent', '%']);
+	  locale.bindMacro('shift + 6', ['caret', '^']);
+	  locale.bindMacro('shift + 7', ['ampersand', 'and', '&']);
+	  locale.bindMacro('shift + 8', ['asterisk', '*']);
+	  locale.bindMacro('shift + 9', ['openparen', '(']);
+	  locale.bindMacro('shift + 0', ['closeparen', ')']);
+	  locale.bindMacro('shift + -', ['underscore', '_']);
+	  locale.bindMacro('shift + =', ['plus', '+']);
+	  locale.bindMacro('shift + [', ['opencurlybrace', 'opencurlybracket', '{']);
+	  locale.bindMacro('shift + ]', ['closecurlybrace', 'closecurlybracket', '}']);
+	  locale.bindMacro('shift + \\', ['verticalbar', '|']);
+	  locale.bindMacro('shift + ;', ['colon', ':']);
+	  locale.bindMacro('shift + \'', ['quotationmark', '\'']);
+	  locale.bindMacro('shift + !,', ['openanglebracket', '<']);
+	  locale.bindMacro('shift + .', ['closeanglebracket', '>']);
+	  locale.bindMacro('shift + /', ['questionmark', '?']);
+
+	  //a-z and A-Z
+	  for (var keyCode = 65; keyCode <= 90; keyCode += 1) {
+	    var keyName = String.fromCharCode(keyCode + 32);
+	    var capitalKeyName = String.fromCharCode(keyCode);
+	  	locale.bindKeyCode(keyCode, keyName);
+	  	locale.bindMacro('shift + ' + keyName, capitalKeyName);
+	  	locale.bindMacro('capslock + ' + keyName, capitalKeyName);
+	  }
+
+	  // browser caveats
+	  var semicolonKeyCode = userAgent.match('Firefox') ? 59  : 186;
+	  var dashKeyCode      = userAgent.match('Firefox') ? 173 : 189;
+	  var leftCommandKeyCode;
+	  var rightCommandKeyCode;
+	  if (platform.match('Mac') && (userAgent.match('Safari') || userAgent.match('Chrome'))) {
+	    leftCommandKeyCode  = 91;
+	    rightCommandKeyCode = 93;
+	  } else if(platform.match('Mac') && userAgent.match('Opera')) {
+	    leftCommandKeyCode  = 17;
+	    rightCommandKeyCode = 17;
+	  } else if(platform.match('Mac') && userAgent.match('Firefox')) {
+	    leftCommandKeyCode  = 224;
+	    rightCommandKeyCode = 224;
+	  }
+	  locale.bindKeyCode(semicolonKeyCode,    ['semicolon', ';']);
+	  locale.bindKeyCode(dashKeyCode,         ['dash', '-']);
+	  locale.bindKeyCode(leftCommandKeyCode,  ['command', 'windows', 'win', 'super', 'leftcommand', 'leftwindows', 'leftwin', 'leftsuper']);
+	  locale.bindKeyCode(rightCommandKeyCode, ['command', 'windows', 'win', 'super', 'rightcommand', 'rightwindows', 'rightwin', 'rightsuper']);
+
+	  // kill keys
+	  locale.setKillKey('command');
+	};
+
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	var _keyTemplate = __webpack_require__(12);
+
+	var _keyTemplate2 = _interopRequireDefault(_keyTemplate);
+
+	var Controls = (function () {
+	  function Controls() {
+	    _classCallCheck(this, Controls);
+
+	    this.boundKeys = {};
+	    this.id = Math.random().toString(36).substring(7);
+	  }
+
+	  _createClass(Controls, [{
+	    key: 'setupKey',
+	    value: function setupKey(key, element) {
+	      var _this = this;
+
+	      if (!this.boundKeys[key]) {
+	        (function () {
+	          var $element = $(element);
+	          if (!$element.children('.keys')[0]) $element.append('<div class="keys"></div>');
+	          var $keys = $element.children('.keys');
+	          var keyDiv = $.parseHTML((0, _keyTemplate2['default'])(key));
+	          $keys.append(keyDiv);
+	          _this.keyboard.bind(key, function (e) {
+	            e.preventDefault();
+	            _this[key] = true;
+	            $(keyDiv).addClass('pressed');
+	          }, function () {
+	            _this[key] = false;
+	            $(keyDiv).removeClass('pressed');
+	          });
+	          _this.boundKeys[key] = true;
+	        })();
+	      }
+	    }
+	  }, {
+	    key: 'init',
+	    value: function init(keyboard) {
+	      this.keyboard = keyboard;
+	    }
+	  }]);
+
+	  return Controls;
+	})();
+
+	var instance = undefined;
+
+	function createControls() {
+	  if (!instance) {
+	    instance = new Controls();
+	  }
+	  return instance;
+	}
+
+	exports['default'] = {
+	  controls: createControls()
+	};
+	module.exports = exports['default'];
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	exports['default'] = function (key) {
+	  if (key === 'left' || key === 'right' || key === 'up' || key === 'down') {
+	    return '<div class="key"><div class="arrow-' + key + ' keycap"><span>&#10140;</span></div></div>';
+	  } else {
+	    return '<div class="key"><div class="keycap">' + key.toUpperCase() + '</div></div>';
+	  }
+	};
+
+	module.exports = exports['default'];
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _minigame = __webpack_require__(14);
+
+	var _minigame2 = _interopRequireDefault(_minigame);
+
+	var _controls = __webpack_require__(11);
+
+	var _isTouching = __webpack_require__(15);
+
+	var _isTouching2 = _interopRequireDefault(_isTouching);
+
+	var _moveable = __webpack_require__(16);
+
+	var _moveable2 = _interopRequireDefault(_moveable);
+
+	var GAME_NAME = 'dodge-falling';
+	var PLAYER_SPEED = 4;
+	var AABB = [0, 0, 300, 300];
+
+	var DodgeFalling = (function (_Minigame) {
+	  _inherits(DodgeFalling, _Minigame);
+
+	  function DodgeFalling(keys, name) {
+	    _classCallCheck(this, DodgeFalling);
+
+	    name = name || GAME_NAME;
+	    _get(Object.getPrototypeOf(DodgeFalling.prototype), 'constructor', this).call(this, keys, GAME_NAME);
+	    this.key1 = keys[0];
+	    this.key2 = keys[1];
+
+	    this.setupStage();
+	  }
+
+	  _createClass(DodgeFalling, [{
+	    key: 'setupStage',
+	    value: function setupStage() {
+	      var box = new _moveable2['default'](this.stage, {
+	        aabb: AABB,
+	        width: 60,
+	        height: 60,
+	        x: 200
+	      });
+	      this.box = box;
+	      box.graphics.beginFill('#911').drawRect(0, 0, box.shape.width, box.shape.height);
+	      box.reset = function () {
+	        box.moveTo(Math.random() * (AABB[2] - box.shape.width), 0);
+	        box.dy = 0;
+	      };
+
+	      var player = new _moveable2['default'](this.stage, {
+	        aabb: AABB,
+	        width: 30,
+	        height: 60,
+	        x: 150,
+	        y: AABB[3] - 60,
+	        isBounded: true
+	      });
+	      this.player = player;
+	      player.graphics.beginFill('#369').drawRect(0, 0, player.shape.width, player.shape.height);
+	    }
+	  }, {
+	    key: 'tick',
+	    value: function tick(event) {
+	      var box = this.box;
+	      var player = this.player;
+	      if ((0, _isTouching2['default'])(box, player)) {
+	        document.dispatchEvent(new Event('lose'));
+	        player.moveTo(0);
+	        box.reset();
+	      }
+
+	      if (_controls.controls[this.key1]) {
+	        player.moveBy(-event.delta / 10 * PLAYER_SPEED);
+	      } else if (_controls.controls[this.key2]) {
+	        player.moveBy(event.delta / 10 * PLAYER_SPEED);
+	      }
+
+	      box.dy += 0.2;
+	      box.move(event.delta);
+
+	      if (box.shape.y >= box.aabb[3]) {
+	        box.reset();
+	      }
+
+	      _get(Object.getPrototypeOf(DodgeFalling.prototype), 'tick', this).call(this);
+	    }
+	  }]);
+
+	  return DodgeFalling;
+	})(_minigame2['default']);
+
+	exports['default'] = DodgeFalling;
+	module.exports = exports['default'];
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	var _controls = __webpack_require__(11);
+
+	var Minigame = (function () {
+	  function Minigame(keys, name) {
+	    var _this = this;
+
+	    _classCallCheck(this, Minigame);
+
+	    this.id = name || Math.random().toString(36).substring(7);
+	    this.tick = this.tick.bind(this);
+	    this.initStage();
+	    keys.forEach(function (key) {
+	      return _controls.controls.setupKey(key, _this.$container);
+	    });
+	  }
+
+	  _createClass(Minigame, [{
+	    key: 'initStage',
+	    value: function initStage() {
+	      var $canvas = $('<canvas id=' + this.id + ' width=300 height=300></canvas>');
+	      var $container = $('<div class="game-container"></div>').append($canvas);
+	      $('body').append($container);
+	      this.$canvas = $canvas;
+	      this.$container = $container;
+	      this.stage = new createjs.Stage($canvas[0]);
+	    }
+	  }, {
+	    key: 'destroy',
+	    value: function destroy() {
+	      this.stage.removeAllChildren();
+	      this.stage.update();
+	      this.$container.remove();
+	    }
+	  }, {
+	    key: 'tick',
+	    value: function tick() {
+	      if (createjs.Ticker.getPaused()) return;
+	      this.stage.update();
+	    }
+	  }]);
+
+	  return Minigame;
+	})();
+
+	exports['default'] = Minigame;
+	module.exports = exports['default'];
+
+/***/ },
+/* 15 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports["default"] = isTouching;
+
+	function isTouching(rect1, rect2) {
+	  rect1 = rect1 && rect1.shape || rect1 || {};
+	  rect2 = rect2 && rect2.shape || rect2 || {};
+	  return !(rect1.x >= rect2.x + rect2.width || rect1.x + rect1.width <= rect2.x || rect1.y >= rect2.y + rect2.height || rect1.y + rect1.height <= rect2.y);
+	}
+
+	module.exports = exports["default"];
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Moveable = (function () {
+	  function Moveable(stage, options) {
+	    _classCallCheck(this, Moveable);
+
+	    this.shape = new createjs.Shape();
+	    this.shape.width = options.width || options.size;
+	    this.shape.height = options.height || options.size;
+	    if (options.x) this.shape.x = options.x;
+	    if (options.y) this.shape.y = options.y;
+	    this.dx = options.dx || 0;
+	    this.dy = options.dy || 0;
+	    this.aabb = options.aabb;
+	    this.graphics = this.shape.graphics;
+	    this.isBounded = options.isBounded;
+	    stage.addChild(this.shape);
+	  }
+
+	  _createClass(Moveable, [{
+	    key: "moveTo",
+	    value: function moveTo(x, y) {
+	      if (!isNaN(parseFloat(x)) && isFinite(x)) {
+	        this.shape.x = x;
+	      }
+	      if (!isNaN(parseFloat(y)) && isFinite(y)) {
+	        this.shape.y = y;
+	      }
+	    }
+	  }, {
+	    key: "moveBy",
+	    value: function moveBy(x, y) {
+	      if (x) {
+	        this.shape.x += x;
+	        if (this.isBounded) {
+	          if (this.shape.x < this.aabb[0]) {
+	            this.shape.x = this.aabb[0];
+	          } else if (this.shape.x + this.shape.width > this.aabb[2]) {
+	            this.shape.x = this.aabb[2] - this.shape.width;
+	          }
+	        }
+	      }
+	      if (y) {
+	        this.shape.y += y;
+	        if (this.isBounded) {
+	          if (this.shape.y < this.aabb[1]) {
+	            this.shape.x = this.aabb[1];
+	          } else if (this.shape.y + this.shape.height > this.aabb[3]) {
+	            this.shape.y = this.aabb[3] - this.shape.height;
+	          }
+	        }
+	      }
+	    }
+	  }, {
+	    key: "move",
+	    value: function move(delta) {
+	      delta = delta || 16;
+	      this.moveBy(this.dx * delta / 100, this.dy * delta / 100);
+	    }
+	  }, {
+	    key: "isOnBoundary",
+	    value: function isOnBoundary() {
+	      return this.shape.x <= this.aabb[0] || this.shape.x >= this.aabb[2] || this.shape.y <= this.aabb[1] || this.shape.y >= this.aabb[3];
+	    }
+	  }]);
+
+	  return Moveable;
+	})();
+
+	exports["default"] = Moveable;
+	module.exports = exports["default"];
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _minigame = __webpack_require__(14);
+
+	var _minigame2 = _interopRequireDefault(_minigame);
+
+	var _controls = __webpack_require__(11);
+
+	var _isTouching = __webpack_require__(15);
+
+	var _isTouching2 = _interopRequireDefault(_isTouching);
+
+	var _moveable = __webpack_require__(16);
+
+	var _moveable2 = _interopRequireDefault(_moveable);
+
+	var GAME_NAME = 'stay-between';
+	var PLAYER_SPEED = 1;
+	var AABB = [0, 0, 300, 300];
+	var LINE_HEIGHT = 5;
+	// const LINE_COUNT = 2;
+	var LINE_DISTANCE = AABB[3] / 4;
+
+	var StayBetween = (function (_Minigame) {
+	  _inherits(StayBetween, _Minigame);
+
+	  function StayBetween(keys, name) {
+	    _classCallCheck(this, StayBetween);
+
+	    name = name || GAME_NAME;
+	    _get(Object.getPrototypeOf(StayBetween.prototype), 'constructor', this).call(this, keys, GAME_NAME);
+	    this.key1 = keys[0];
+	    this.key2 = keys[1];
+
+	    this.setupStage();
+	  }
+
+	  _createClass(StayBetween, [{
+	    key: 'setupStage',
+	    value: function setupStage() {
+	      this.objects = [];
+	      var player = new _moveable2['default'](this.stage, {
+	        aabb: AABB,
+	        width: AABB[2],
+	        height: LINE_HEIGHT,
+	        y: (AABB[3] - LINE_HEIGHT) / 2
+	      });
+	      this.player = player;
+	      player.graphics.beginFill('#369').drawRect(0, 0, player.shape.width, player.shape.height);
+	      this.objects.push(player);
+
+	      this.lines = [];
+
+	      var line = new _moveable2['default'](this.stage, {
+	        aabb: AABB,
+	        width: AABB[2],
+	        height: 10,
+	        y: this.player.shape.y - LINE_DISTANCE,
+	        dy: -2
+	      });
+	      this.lines.push(line);
+	      line.graphics.beginFill('#911').drawRect(0, 0, line.shape.width, line.shape.height);
+	      this.objects.push(line);
+
+	      var line2 = new _moveable2['default'](this.stage, {
+	        aabb: AABB,
+	        width: AABB[2],
+	        height: 10,
+	        y: this.player.shape.y + LINE_DISTANCE,
+	        dy: -2
+	      });
+	      this.lines.push(line2);
+	      line2.graphics.beginFill('#911').drawRect(0, 0, line.shape.width, line.shape.height);
+	      this.objects.push(line2);
+	    }
+	  }, {
+	    key: 'tick',
+	    value: function tick(event) {
+	      var player = this.player;
+
+	      this.lines.forEach(function (line) {
+	        if ((0, _isTouching2['default'])(line, player)) {
+	          document.dispatchEvent(new Event('lose'));
+	          player.dy = 0;
+	          player.moveTo(0, AABB[3] / 2);
+	        }
+	      });
+
+	      // Add acceleration if pressed
+	      if (_controls.controls[this.key1]) {
+	        player.dy -= PLAYER_SPEED;
+	      } else if (_controls.controls[this.key2]) {
+	        player.dy += PLAYER_SPEED;
+	      }
+
+	      // Constantly slow
+	      player.dy *= 0.98;
+	      if (Math.abs(player.dy) < 0.001) player.dy = 0;
+
+	      this.objects.forEach(function (object) {
+	        // Check if wrapped screen
+	        if (object.shape.y < 0) {
+	          object.moveTo(0, AABB[3]);
+	        } else if (object.shape.y > AABB[3] - object.shape.height) {
+	          object.shape.y = AABB[3] - object.shape.height;
+	          if (object.dy > 0) object.dy = 0;
+	        }
+
+	        object.move(event.delta);
+	      });
+
+	      _get(Object.getPrototypeOf(StayBetween.prototype), 'tick', this).call(this);
+	    }
+	  }]);
+
+	  return StayBetween;
+	})(_minigame2['default']);
+
+	exports['default'] = StayBetween;
+	module.exports = exports['default'];
+
+/***/ },
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _minigame = __webpack_require__(14);
+
+	var _minigame2 = _interopRequireDefault(_minigame);
+
+	var _controls = __webpack_require__(11);
+
+	var _isTouching = __webpack_require__(15);
+
+	var _isTouching2 = _interopRequireDefault(_isTouching);
+
+	var _moveable = __webpack_require__(16);
+
+	var _moveable2 = _interopRequireDefault(_moveable);
+
+	var GAME_NAME = 'dodge-falling';
+	var AABB = [0, 0, 300, 300];
+	var BALL_SIZE = 25;
+
+	var DodgeFalling = (function (_Minigame) {
+	  _inherits(DodgeFalling, _Minigame);
+
+	  function DodgeFalling(keys, name) {
+	    _classCallCheck(this, DodgeFalling);
+
+	    name = name || GAME_NAME;
+	    _get(Object.getPrototypeOf(DodgeFalling.prototype), 'constructor', this).call(this, keys, GAME_NAME);
+	    this.key = keys[0];
+
+	    this.setupStage();
+	  }
+
+	  _createClass(DodgeFalling, [{
+	    key: 'setupStage',
+	    value: function setupStage() {
+	      var ball = new _moveable2['default'](this.stage, {
+	        aabb: AABB,
+	        width: BALL_SIZE,
+	        height: BALL_SIZE,
+	        y: AABB[3] / 2,
+	        x: -300,
+	        dx: 10
+	      });
+	      this.ball = ball;
+	      ball.graphics.beginFill('#393').drawCircle(0, 0, ball.shape.width);
+
+	      var target = new createjs.Container();
+	      target.x = AABB[2] / 2;
+	      target.y = AABB[3] / 2;
+	      target.readyToFire = true;
+	      target.charge = 1;
+	      this.target = target;
+
+	      var ring = new createjs.Shape();
+	      target.ring = ring;
+	      target.r = ring.r = AABB[2] / 25;
+	      ring.graphics.setStrokeStyle(3);
+	      ring.drawArc = function (charge) {
+	        ring.graphics.clear();
+	        ring.graphics.setStrokeStyle(3).beginStroke('#369').arc(0, 0, ring.r, -0.5 * Math.PI, (charge - 0.25) * 2 * Math.PI);
+	      };
+	      ring.drawArc(1);
+	      target.updateCharge = function (delta) {
+	        target.charge += delta / 1500;
+	        if (target.charge < 1) {
+	          ring.alpha = target.charge;
+	          ring.drawArc(target.charge);
+	        } else {
+	          ring.drawArc(1);
+	          target.readyToFire = true;
+	        }
+	      };
+
+	      target.addChild(ring);
+	      this.stage.addChild(target);
+	      this.stage.update();
+	    }
+	  }, {
+	    key: 'tick',
+	    value: function tick(event) {
+	      var target = this.target;
+	      var ball = this.ball;
+	      if (_controls.controls[this.key]) {
+	        if (target.readyToFire) {
+	          target.ring.graphics.beginFill('#69b').drawCircle(0, 0, target.r);
+	          target.readyToFire = false;
+	          target.charge = 0;
+	          if (ball.shape.x - ball.shape.width < target.x + target.r && ball.shape.x + ball.shape.width > target.x - target.r) {
+	            createjs.Tween.get(ball.shape).to({ alpha: 0, y: ball.shape.y - 50 }, 500, createjs.Ease.quadOut).call(function () {
+	              ball.moveTo(Math.random() * -2 * AABB[3], AABB[3] / 2);
+	              ball.shape.alpha = 1;
+	            });
+	          }
+	        }
+	      }
+
+	      if (target.readyToFire === false) {
+	        target.updateCharge(event.delta);
+	      }
+
+	      this.ball.move();
+	      if (ball.shape.x + ball.shape.width > AABB[3]) {
+	        document.dispatchEvent(new Event('lose'));
+	        ball.moveTo(Math.random() * -2 * AABB[3], AABB[3] / 2);
+	      }
+	      _get(Object.getPrototypeOf(DodgeFalling.prototype), 'tick', this).call(this);
+	    }
+	  }]);
+
+	  return DodgeFalling;
+	})(_minigame2['default']);
+
+	exports['default'] = DodgeFalling;
+	module.exports = exports['default'];
+
+/***/ }
+/******/ ]);
