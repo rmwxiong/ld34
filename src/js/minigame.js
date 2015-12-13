@@ -17,5 +17,11 @@ export default class Minigame {
     this.stage = new createjs.Stage($canvas[0]);
   }
 
+  destroy() {
+    this.stage.removeAllChildren();
+    this.stage.update();
+    this.$container.remove();
+  }
+
   tick() {}
 }
