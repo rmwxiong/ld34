@@ -68,6 +68,12 @@ class MenuController {
   hideInstructions() {
     $('.instructions-page').addClass('hidden');
   }
+
+  unlockHard() {
+    document.title = 'Twenty-Eight Buttons';
+    $('.play-all').removeClass('hidden');
+    $('.title').html('Twenty-Eight Buttons');
+  }
 }
 
 let instance;

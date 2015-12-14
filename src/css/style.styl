@@ -184,10 +184,10 @@ span, h1, div {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: calc(50% - 300px);
+  left: calc(50% - 450px);
+  right: calc(50% - 450px);
+  bottom: calc(50% - 300px);
   
   &.lost {
     animation: fadeOut 1s ease-out both;
@@ -210,8 +210,40 @@ span, h1, div {
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
-canvas {
-  background-color: #222;
+.game-container {
+  canvas {
+    background-color: #222;
+  }
+}
+
+.game-container:nth-of-type(2) {
+  canvas {
+    background-color: #232;
+  }
+}
+
+.game-container:nth-of-type(3) {
+  canvas {
+    background-color: #234;
+  }
+}
+
+.game-container:nth-of-type(4) {
+  canvas {
+    background-color: #322;
+  }
+}
+
+.game-container:nth-of-type(5) {
+  canvas {
+    background-color: #323;
+  }
+}
+
+.game-container:nth-of-type(6) {
+  canvas {
+    background-color: #432;
+  }
 }
 
 .key {
@@ -319,4 +351,12 @@ canvas {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.play-all {
+  transform: translateY(50px);
+  
+  &.hidden {
+    display: none;
+  }
 }
