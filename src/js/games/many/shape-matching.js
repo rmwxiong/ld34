@@ -12,7 +12,7 @@ const AABB = [0, 0, 300, 300];
 const LINE_HEIGHT = 5;
 // const LINE_COUNT = 2;
 const LINE_DISTANCE = AABB[3] / 4;
-const MATCH_TIME = 15000;
+const MATCH_TIME = 20000;
 
 export default class StayBetween extends Minigame {
   constructor(keys, name) {
@@ -60,8 +60,8 @@ export default class StayBetween extends Minigame {
         let brick = new createjs.Shape();
         brick.width = 100;
         brick.height = 100;
-        brick.x = 100 * i;
-        brick.y = 100 * j;
+        brick.x = 100 * j;
+        brick.y = 100 * i;
         brickContainer.addChild(brick);
         brick.graphics
           .setStrokeStyle(3)
@@ -78,7 +78,7 @@ export default class StayBetween extends Minigame {
   }
 
   createPattern(count) {
-    count = count || Math.floor(Math.random() * 4 + 1);
+    count = count || Math.floor(Math.random() * 3 + 1);
 
     let availableNums = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     let randomNums = [];
@@ -115,7 +115,6 @@ export default class StayBetween extends Minigame {
     });
 
     if (matched) {
-      console.log('MATCHED!');
       this.timeLeft = MATCH_TIME;
       this.createPattern();
     }
