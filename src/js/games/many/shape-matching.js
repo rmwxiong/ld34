@@ -91,10 +91,7 @@ export default class StayBetween extends Minigame {
     this.bricks.forEach((brick, index) => {
       brick.graphics.clear();
       brick.inPattern = (randomNums.indexOf(index) > -1);
-      console.log(brick.inPattern);
     });
-
-    console.log(this.bricks);
   }
 
   tick(event) {

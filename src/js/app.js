@@ -142,9 +142,7 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
   function onLoss() {
     controls.reset();
     createjs.Sound.stop('bgm');
-    console.log('You lose');
     if (score > highScore) {
-      console.log('New high score!');
       localStorage.setItem('highScore', score);
       highScore = score;
       $('.high-score-value').html(highScore);
@@ -168,7 +166,6 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
   function tick(event) {
     if (createjs.Ticker.getPaused()) return;
     games.forEach(game => game.tick(event));
-    console.log(score);
     score = Math.floor((Date.now() - startTime) / 1000);
     if (isHard) score += 70;
     $('.score').html(score);

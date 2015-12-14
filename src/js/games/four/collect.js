@@ -27,7 +27,6 @@ export default class Collect extends Minigame {
     collectable.id = Math.random().toString(36).substring(7);
     collectable.charge = 1;
     collectable.ring = new createjs.Shape();
-    console.log(collectable.r);
     collectable.drawArc = function(charge) {
       charge = charge || collectable.charge;
       collectable.ring.graphics.clear();

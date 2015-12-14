@@ -40,7 +40,6 @@ export default class Moveable {
           this.entity.x = this.aabb[2] - this.entity.width;
         }
       } else if (this.isCircleBounded) {
-        console.log(this.entity.x, this.r, this.aabb[0]);
         if (this.entity.x - this.r < this.aabb[0]) {
           this.entity.x = this.aabb[0] + this.r;
         } else if (this.entity.x + this.r > this.aabb[2]) {

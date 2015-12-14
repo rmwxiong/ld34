@@ -43,7 +43,6 @@ class MenuController {
   }
 
   unlockGame(n) {
-    console.log('unlock', n);
     $('#gi' + n + ' .game-info').removeClass('locked').html($('#instructions-g' + n).html());
   }
 

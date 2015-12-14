@@ -83,7 +83,6 @@ export default class Algebra extends Minigame {
   createNewQuestion() {
     this.firstNum = Math.floor(Math.random() * 10);
     this.answer = Math.floor(Math.random() * 10);
-    console.log(this.answer);
     this.result = this.firstNum + this.answer;
 
     this.questionNode.color = '#369';
@@ -129,12 +128,10 @@ export default class Algebra extends Minigame {
 
     let hasGuess = !isNaN(parseFloat(guess)) && isFinite(guess);
     if (hasGuess && !this.wrongTime) {
-      console.log('guess', guess, this.answer);
       if (guess == this.answer) {
         this.questionNode.color = '#393';
         this.timeLeft = ANSWER_TIME + 500;
         this.wrongTime = ANSWER_TIME + 1500;
-        console.log(this.timeLeft, this.wrongTime);
       } else {
         this.questionNode.color = '#911';
         this.wrongTime = timeLeft;
@@ -144,7 +141,6 @@ export default class Algebra extends Minigame {
     }
 
     if (this.wrongTime && this.wrongTime > this.timeLeft + 1500) {
-      console.log('creating new question');
       this.createNewQuestion();
       this.wrongTime = 0;
     }
