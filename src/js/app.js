@@ -8,6 +8,7 @@ import DodgeFalling from './games/two/dodge-falling';
 import StayBetween from './games/two/stay-between';
 import Snapshot from './games/one/snapshot';
 import Collect from './games/four/collect';
+import Algebra from './games/numbers/algebra';
 import bgm from 'file!../ld34bgm.mp3';
 
 const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
@@ -20,7 +21,7 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
   createjs.Ticker.addEventListener('tick', tick);
   let games = [];
   let gameSpawns = [];
-  let playBgm = () => createjs.Sound.play('bgm');
+  let playBgm = () => createjs.Sound.play('bgm', {loop: 100});
   let realInstructionsShown = false;
   document.addEventListener('lose', onLoss);
 
@@ -54,7 +55,7 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
     createjs.Sound.addEventListener('fileload', event => {
       $('.loading').hide();
       $('.main-menu').show();
-      playBgm = () => createjs.Sound.play(event.src);
+      playBgm = () => createjs.Sound.play(event.src, {loop: 100});
     });
     createjs.Sound.registerSounds(sounds, '/');
   }
@@ -64,6 +65,7 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
       let game = new Game(controls);
       games.push(game);
       gameCount++;
+      $('.games').attr('class', 'games with-' + gameCount);
       if (gameCount > 1 && !realInstructionsShown) {
         menuController.showRealInstructions();
       }
@@ -92,6 +94,7 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
     addGame(Snapshot, ['space'], 13710);
     addGame(StayBetween, ['up', 'down'], 27420);
     addGame(Collect, ['w', 'a', 's', 'd'], 41140);
+    addGame(Algebra, ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'], 54850);
   }
 
   function anyKey() {
