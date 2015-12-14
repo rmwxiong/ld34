@@ -31,6 +31,21 @@ class Controls {
   reset() {
     this.boundKeys = {};
     this.keyboard.reset();
+    this.keyboard.bind('up', e => {
+      e.preventDefault();
+    });
+    this.keyboard.bind('down', e => {
+      e.preventDefault();
+    });
+    this.keyboard.bind('left', e => {
+      e.preventDefault();
+    });
+    this.keyboard.bind('right', e => {
+      e.preventDefault();
+    });
+    this.keyboard.bind('space', e => {
+      e.preventDefault();
+    });
   }
 
   init(keyboard) {
