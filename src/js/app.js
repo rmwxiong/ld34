@@ -44,6 +44,9 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
       menuController.unlockGame(n);
     }
   });
+  if (highScore > 70) {
+    menuController.unlockHard();
+  }
   // startGames();
 
   keyboard.bind('right', menuController.menuRight);
@@ -78,7 +81,7 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
     gameSpawns.push(gameSpawn);
   }
 
-  function startGames() {
+  function startGames(hardMode) {
     $('.games').removeClass('lost');
     $('.score').show();
     gameCount = 0;
@@ -93,13 +96,13 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
     // let game = new Collect(['w', 'a', 's', 'd']);\
     playBgm();
     addGame(DodgeFalling, ['left', 'right'], 0);
-    addGame(Snapshot, ['space'], 13710);
-    addGame(StayBetween, ['up', 'down'], 27420);
-    addGame(Collect, ['w', 'a', 's', 'd'], 41140);
+    addGame(Snapshot, ['space'], hardMode ? 0 : 13710);
+    addGame(StayBetween, ['up', 'down'], hardMode ? 0 : 27420);
+    addGame(Collect, ['w', 'a', 's', 'd'], hardMode ? 0 : 41140);
     addGame(Algebra, ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
                       'num1', 'num2', 'num3', 'num4', 'num5', 'num6', 'num7', 'num8', 'num9', 'num0'
-                      ], 54850);
-    addGame(ShapeMatching, ['u', 'i', 'o', 'j', 'k', 'l', 'm', ',', '.'], 68570);
+                      ], hardMode ? 0 : 54850);
+    addGame(ShapeMatching, ['u', 'i', 'o', 'j', 'k', 'l', 'm', ',', '.'], hardMode ? 0 : 68570);
   }
 
   function anyKey() {
@@ -110,6 +113,7 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
     menuController.showMenu();
     keyboard.bind('right', menuController.menuRight);
     keyboard.bind('left', menuController.menuLeft);
+    keyboard.bind('down', menuController.startHard);
   }
 
   function onLoss() {
@@ -122,6 +126,11 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
       highScore = score;
       $('.high-score-value').html(highScore);
     }
+
+    if (highScore > 70) {
+      menuController.unlockHard();
+    }
+
     $('.last-score-value').html(score);
     createjs.Ticker.setPaused(true);
     gameSpawns.forEach(spawn => clearTimeout(spawn));
