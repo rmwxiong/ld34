@@ -127,7 +127,8 @@ export default class Algebra extends Minigame {
       guess = 0;
     }
 
-    if (guess && !this.wrongTime) {
+    let hasGuess = !isNaN(parseFloat(guess)) && isFinite(guess);
+    if (hasGuess && !this.wrongTime) {
       console.log('guess', guess, this.answer);
       if (guess == this.answer) {
         this.questionNode.color = '#393';
