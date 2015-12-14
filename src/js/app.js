@@ -27,6 +27,10 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
   let realInstructionsShown = false;
   document.addEventListener('lose', onLoss);
 
+  let gui = new dat.GUI();
+  createjs.Sound.volume = 0.7;
+  gui.add(createjs.Sound, 'volume', 0, 1);
+
   let highScore = localStorage.getItem('highScore') || 0;
   $('.high-score-value').html(highScore);
   let score = 0;

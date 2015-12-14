@@ -25,6 +25,19 @@ span, h1, div {
   cursor: default;
 }
 
+.close-button {
+  display: none;
+}
+
+.dg.main {
+  animation: fadeOut 15s 5s ease-out both;
+  
+  &:hover {
+    animation: none;
+    opacity: 1;
+  }
+}
+
 .loading {
   font-size: 40px;
 }
