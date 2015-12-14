@@ -40,6 +40,7 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
     if (highScore >= threshold) {
       if (n === 2) {
         menuController.showRealInstructions();
+        realInstructionsShown = true;
       }
       menuController.unlockGame(n);
     }
