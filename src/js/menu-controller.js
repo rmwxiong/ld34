@@ -3,6 +3,7 @@ class MenuController {
   constructor() {
     this.menuLeft = this.menuLeft.bind(this);
     this.menuRight = this.menuRight.bind(this);
+    this.startHard = this.startHard.bind(this);
     this.menuState = 'main';
     this.realInstructions = false;
     this.gameCount = 0;
@@ -67,6 +68,12 @@ class MenuController {
 
   hideInstructions() {
     $('.instructions-page').addClass('hidden');
+  }
+
+  startHard() {
+    this.hideMenu();
+    this.hideInstructions();
+    this.startGame(true);
   }
 
   unlockHard() {

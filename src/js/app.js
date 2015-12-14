@@ -49,8 +49,11 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
   }
   // startGames();
 
+  let isHard = false;
+
   keyboard.bind('right', menuController.menuRight);
   keyboard.bind('left', menuController.menuLeft);
+  keyboard.bind('down', menuController.startHard);
 
   function setupSounds() {
     let sounds = [{
@@ -82,13 +85,14 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
   }
 
   function startGames(hardMode) {
+    isHard = hardMode;
     $('.games').removeClass('lost');
     $('.score').show();
     gameCount = 0;
     menuController.hide();
     controls.reset();
     startTime = Date.now();
-    score = 0;
+    score = hardMode ? 70 : 0;
     createjs.Ticker.setPaused(false);
     gameSpawns.forEach(spawn => clearTimeout(spawn));
     games.forEach(game => game.destroy());
@@ -145,7 +149,9 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
   function tick(event) {
     if (createjs.Ticker.getPaused()) return;
     games.forEach(game => game.tick(event));
+    console.log(score);
     score = Math.floor((Date.now() - startTime) / 1000);
+    if (isHard) score += 70;
     $('.score').html(score);
   }
 })();
