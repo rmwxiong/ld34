@@ -90,6 +90,7 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
       $('.games').attr('class', 'games with-' + gameCount);
       if (gameCount > 1 && !realInstructionsShown) {
         menuController.showRealInstructions();
+        realInstructionsShown = true;
       }
       if (realInstructionsShown) {
         menuController.unlockGame(gameCount);
