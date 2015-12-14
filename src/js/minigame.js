@@ -1,11 +1,12 @@
 import {controls} from './controls';
 
 export default class Minigame {
-  constructor(keys, name) {
+  constructor(keys, name, options) {
+    options = options || {};
     this.id = name || Math.random().toString(36).substring(7);
     this.tick = this.tick.bind(this);
     this.initStage();
-    keys.forEach(key => controls.setupKey(key, this.$container));
+    keys.forEach(key => controls.setupKey(key, this.$container, options.noShow));
   }
 
   initStage() {

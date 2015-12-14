@@ -14,6 +14,7 @@ import bgm from 'file!../ld34bgm.mp3';
 const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
 
 (function() {
+  $('.body').show();
   setupSounds();
   createjs.Ticker.setFPS(60);
   createjs.Ticker.setPaused(true);
@@ -62,7 +63,7 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
 
   function addGame(Game, controls, time) {
     let gameSpawn = setTimeout(() => {
-      let game = new Game(controls);
+      let game = new Game(controls, undefined);
       games.push(game);
       gameCount++;
       $('.games').attr('class', 'games with-' + gameCount);
@@ -94,7 +95,9 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
     addGame(Snapshot, ['space'], 13710);
     addGame(StayBetween, ['up', 'down'], 27420);
     addGame(Collect, ['w', 'a', 's', 'd'], 41140);
-    addGame(Algebra, ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'], 54850);
+    addGame(Algebra, ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
+                      'num1', 'num2', 'num3', 'num4', 'num5', 'num6', 'num7', 'num8', 'num9', 'num0'
+                      ], 54850);
   }
 
   function anyKey() {

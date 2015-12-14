@@ -12,7 +12,7 @@ const ANSWER_TIME = 10000;
 export default class Algebra extends Minigame {
   constructor(keys, name) {
     name = name || GAME_NAME;
-    super(keys, GAME_NAME);
+    super(keys, GAME_NAME, {noShow: true});
     this.key1 = keys[0];
     this.key2 = keys[1];
     this.key3 = keys[2];
@@ -23,6 +23,16 @@ export default class Algebra extends Minigame {
     this.key8 = keys[7];
     this.key9 = keys[8];
     this.key0 = keys[9];
+    this.numKey1 = keys[10];
+    this.numKey2 = keys[11];
+    this.numKey3 = keys[12];
+    this.numKey4 = keys[13];
+    this.numKey5 = keys[14];
+    this.numKey6 = keys[15];
+    this.numKey7 = keys[16];
+    this.numKey8 = keys[17];
+    this.numKey9 = keys[18];
+    this.numKey0 = keys[19];
 
     this.setupStage();
 
@@ -95,25 +105,25 @@ export default class Algebra extends Minigame {
     }
 
     let guess;
-    if (controls[this.key1]) {
+    if (controls[this.key1] || controls[this.numKey1]) {
       guess = 1;
-    } else if (controls[this.key2]) {
+    } else if (controls[this.key2] || controls[this.numKey2]) {
       guess = 2;
-    } else if (controls[this.key3]) {
+    } else if (controls[this.key3] || controls[this.numKey3]) {
       guess = 3;
-    } else if (controls[this.key4]) {
+    } else if (controls[this.key4] || controls[this.numKey4]) {
       guess = 4;
-    } else if (controls[this.key5]) {
+    } else if (controls[this.key5] || controls[this.numKey5]) {
       guess = 5;
-    } else if (controls[this.key6]) {
+    } else if (controls[this.key6] || controls[this.numKey6]) {
       guess = 6;
-    } else if (controls[this.key7]) {
+    } else if (controls[this.key7] || controls[this.numKey7]) {
       guess = 7;
-    } else if (controls[this.key8]) {
+    } else if (controls[this.key8] || controls[this.numKey8]) {
       guess = 8;
-    } else if (controls[this.key9]) {
+    } else if (controls[this.key9] || controls[this.numKey9]) {
       guess = 9;
-    } else if (controls[this.key0]) {
+    } else if (controls[this.key0] || controls[this.numKey0]) {
       guess = 0;
     }
 

@@ -6,20 +6,23 @@ class Controls {
     this.id = Math.random().toString(36).substring(7);
   }
 
-  setupKey(key, element) {
+  setupKey(key, element, noShow) {
     if (!this.boundKeys[key]) {
       let $element = $(element);
       if (!$element.children('.keys')[0]) $element.append('<div class="keys"></div>');
       let $keys = $element.children('.keys');
-      let keyDiv = $.parseHTML(renderKey(key));
-      $keys.append(keyDiv);
+      let keyDiv;
+      if (!noShow) {
+        keyDiv = $.parseHTML(renderKey(key));
+        $keys.append(keyDiv);
+      }
       this.keyboard.bind(key, e => {
         e.preventDefault();
         this[key] = true;
-        $(keyDiv).addClass('pressed');
+        if (!noShow) $(keyDiv).addClass('pressed');
       }, () => {
         this[key] = false;
-        $(keyDiv).removeClass('pressed');
+        if (!noShow) $(keyDiv).removeClass('pressed');
       });
       this.boundKeys[key] = true;
     }
