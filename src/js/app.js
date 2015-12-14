@@ -9,6 +9,7 @@ import StayBetween from './games/two/stay-between';
 import Snapshot from './games/one/snapshot';
 import Collect from './games/four/collect';
 import Algebra from './games/numbers/algebra';
+import ShapeMatching from './games/many/shape-matching';
 import bgm from 'file!../ld34bgm.mp3';
 
 const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
@@ -98,6 +99,7 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
     addGame(Algebra, ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
                       'num1', 'num2', 'num3', 'num4', 'num5', 'num6', 'num7', 'num8', 'num9', 'num0'
                       ], 54850);
+    addGame(ShapeMatching, ['u', 'i', 'o', 'j', 'k', 'l', 'm', ',', '.'], 0);
   }
 
   function anyKey() {
