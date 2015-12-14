@@ -52,9 +52,18 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
 
   let isHard = false;
 
-  keyboard.bind('right', menuController.menuRight);
-  keyboard.bind('left', menuController.menuLeft);
-  keyboard.bind('down', menuController.startHard);
+  keyboard.bind('right', (e) => {
+    e.preventDefault();
+    menuController.menuRight();
+  });
+  keyboard.bind('left', (e) => {
+    e.preventDefault();
+    menuController.menuLeft();
+  });
+  keyboard.bind('down', (e) => {
+    e.preventDefault();
+    menuController.startHard();
+  });
 
   function setupSounds() {
     let sounds = [{
@@ -116,9 +125,18 @@ const GAME_THRESHOLDS = [0, 14, 28, 41, 55, 69];
     $(document).off('keydown', anyKey);
     $('.games').addClass('lost');
     menuController.showMenu();
-    keyboard.bind('right', menuController.menuRight);
-    keyboard.bind('left', menuController.menuLeft);
-    keyboard.bind('down', menuController.startHard);
+    keyboard.bind('right', (e) => {
+      e.preventDefault();
+      menuController.menuRight();
+    });
+    keyboard.bind('left', (e) => {
+      e.preventDefault();
+      menuController.menuLeft();
+    });
+    keyboard.bind('down', (e) => {
+      e.preventDefault();
+      menuController.startHard();
+    });
   }
 
   function onLoss() {
